@@ -33,7 +33,7 @@
 .detail_img {
 
     width: 680px;
-    height: 680px;
+    height: auto;
 
 }
 
@@ -161,6 +161,24 @@ td {
 
 
 }
+.remove_option{
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    background-color: inherit;
+    border: none;
+    color: #B5B6B5;
+}
+.remove_option:hover{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid #B5B6B5;
+    width: 20px;
+    height: 30px;
+
+}
 
 .detail_text_select_list .select_list_quantity {
 
@@ -220,6 +238,7 @@ td {
 
 /* ------------------------------------------------------ */
 .total_price {
+
     font-size: 20px;
     overflow: hidden;
     width: 610px;
@@ -389,7 +408,8 @@ td {
 /* ----------------------상품상세설명란------------------ */
 
 .text_product_detail_description {
-    width: 1360px;
+    width: 100%;
+    max-width: 1360px;
     height: auto;
     display: flex;
     justify-content: right;

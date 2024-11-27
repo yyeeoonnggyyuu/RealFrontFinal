@@ -1,16 +1,16 @@
 // ------------사이즈 선택 옵션 
-document.addEventListener('DOMContentLoaded', function () {
-    const optionSelect = document.getElementById('option_select');
-    const sizeSelectDisplay = document.getElementById('size_select'); // 올바른 id 참조
+// document.addEventListener('DOMContentLoaded', function () {
+//     const optionSelect = document.getElementById('option_select');
+//     const sizeSelectDisplay = document.getElementById('size_select'); // 올바른 id 참조
 
-    optionSelect.addEventListener('change', function () {
-        const selectedOption = optionSelect.options[optionSelect.selectedIndex].text;
-        sizeSelectDisplay.textContent =
-            selectedOption !== '- [필수] 옵션을 선택해 주세요 -'
-                ? selectedOption
-                : '선택된 사이즈 없음';
-    });
-});
+//     optionSelect.addEventListener('change', function () {
+//         const selectedOption = optionSelect.options[optionSelect.selectedIndex].text;
+//         sizeSelectDisplay.textContent =
+//             selectedOption !== '- [필수] 옵션을 선택해 주세요 -'
+//                 ? selectedOption
+//                 : '선택된 사이즈 없음';
+//     });
+// });
 
 // ----상세페이지 script----------
 
@@ -146,3 +146,81 @@ document.addEventListener('DOMContentLoaded', function(){
 })
     
 
+document.addEventListener('DOMContentLoaded', function () {
+    const optionSelect = document.getElementById('option_select');
+    const optionContainer = document.querySelector('.option_inner'); // 옵션 표시할 컨테이너
+    const mainContainer = document.querySelector('.total_price'); // 생성된 옵션을 붙일 메인 컨테이너
+    
+
+    const selectedOptions = new Set(); // 이미 선택된 옵션 저장
+
+    optionSelect.addEventListener('change', function () {
+        const selectedOption = optionSelect.options[optionSelect.selectedIndex].text;
+
+        if (selectedOption === '- [필수] 옵션을 선택해 주세요 -' || selectedOption.includes('품절')) {
+            alert('유효한 옵션을 선택해주세요.');
+            return;
+        }
+
+        if (selectedOptions.has(selectedOption)) {
+            alert('이미 선택한 옵션입니다.');
+            return;
+        }
+
+        selectedOptions.add(selectedOption);
+
+        // 기존 옵션_inner 복사 및 업데이트
+        const newOptionInner = optionContainer.cloneNode(true);
+        newOptionInner.style.display = 'block'; // 보이도록 설정
+        newOptionInner.querySelector('.size_select').textContent = selectedOption; // 옵션명 업데이트
+        newOptionInner.querySelector('#select_list_quantity').value = 1; // 수량 초기화
+        newOptionInner.querySelector('#select_total_price').textContent = '0원'; // 총 가격 초기화
+
+        // 수량 및 가격 업데이트 로직 추가
+        const quantityInput = newOptionInner.querySelector('#select_list_quantity');
+        const quantityUp = newOptionInner.querySelector('#quantity_up');
+        const quantityDown = newOptionInner.querySelector('#quantity_down');
+        const selectTotalPriceElement = newOptionInner.querySelector('#select_total_price');
+        const removeButton = newOptionInner.querySelector('.remove_option');
+
+        const productPrice = 60000; // 가격 예제값
+        const rewardRate = 0.01;
+
+        function updateValues(quantity) {
+            const totalPrice = productPrice * quantity;
+            const rewardPoints = Math.floor(totalPrice * rewardRate);
+
+            quantityInput.value = quantity;
+            selectTotalPriceElement.textContent = `${totalPrice.toLocaleString()}원`;
+        }
+
+        quantityUp.addEventListener('click', function (e) {
+            e.preventDefault();
+            let currentValue = parseInt(quantityInput.value) || 1;
+            currentValue++;
+            updateValues(currentValue);
+        });
+
+        quantityDown.addEventListener('click', function (e) {
+            e.preventDefault();
+            let currentValue = parseInt(quantityInput.value) || 1;
+            if (currentValue > 1) {
+                currentValue--;
+                updateValues(currentValue);
+            }
+        });
+
+        // 옵션 삭제
+        removeButton.addEventListener('click', function(){
+            selectedOptions.delete(selectedOption);
+            newOptionInner.remove();
+        })
+
+        // 초기 업데이트
+        updateValues(1);
+
+        // 생성된 옵션 추가
+        mainContainer.appendChild(newOptionInner);
+
+    });
+});

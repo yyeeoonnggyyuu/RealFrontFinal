@@ -54,10 +54,10 @@
                                 <select id="option_select" class="product_option_size" option_style="select">
                                     <option value="*" selected="" link_image="">- [필수] 옵션을 선택해 주세요 -</option>
                                     <option value="**" disabled="" link_image="">-------------------</option>
-                                    <option value="s" link_image="">S (95) [품절]</option>
-                                    <option value="m" link_image="">M (100) [품절]</option>
-                                    <option value="l" link_image="">L (105) [품절]</option>
-                                    <option value="xl" link_image="">XL (110) [품절]</option>
+                                    <option value="s" link_image="">S (95) </option>
+                                    <option value="m" link_image="">M (100) </option>
+                                    <option value="l" link_image="">L (105) </option>
+                                    <option value="xl" link_image="">XL (110) </option>
                                     <option value="xxl" link_image="">XXL (115) [품절]</option>
                                 </select>
                             </td>
@@ -65,7 +65,7 @@
 
                     </table>
                 </div>
-                <div class="option_inner">
+                <div class="option_inner" style="display: none;">
                     <table class="detail_text_select_list">
                         <tr>
                             <td class="select_list_title">
@@ -77,7 +77,9 @@
                                     <a href="#" class="quantity_down" id="quantity_down">▼</a>
                                     <input id="select_list_quantity" name="quantity_opt[]" value="1" type="text">
                                     <a href="#" class="quantity_up" id="quantity_up">▲</a>
+                                    <button class="remove_option">x</button>
                                 </span>
+
                             </td>
                             <td class="select_total_count">
                                 <span id="select_total_price">0원</span><br>
