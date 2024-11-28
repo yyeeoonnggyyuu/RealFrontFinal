@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener('DOMContentLoaded', function () {
     const optionSelect = document.getElementById('option_select');
     const optionContainer = document.querySelector('.option_inner'); // 옵션 표시할 컨테이너
-    const mainContainer = document.querySelector('.total_price'); // 생성된 옵션을 붙일 메인 컨테이너
+    const mainContainer = document.querySelector('.front_option_inner'); // 생성된 옵션을 붙일 메인 컨테이너
     
 
     const selectedOptions = new Set(); // 이미 선택된 옵션 저장
