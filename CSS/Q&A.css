@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+
+
+}
+body{
+    margin-top: 215px;  
+}
+
+.full_screen{
+    
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 1360px;                         
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+
+}
+
+/* --------------타이틀 로고 --------------- */
+.title_logo{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.title_logo h2 {
+    font-size: 40px;
+}
+/* --------------notice_board------------------ */
+
+.notice_board{
+    width: 100%;
+    max-width: 1360px;
+    
+   
+}
+.notice_board table{
+    border-collapse: collapse;
+    border: none;
+}
+/* ----------------table thead-------------------- */
+
+.board_thead{
+    height: 60px;
+    background-color: #B5B6B5;
+    
+    font-size: 20px;
+    border: none;
+   
+}
+
+
+
+.board_tbody{
+    height: 85px;
+    text-align: center;
+    font-size: 18px;
+   
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+.tbody_title{
+    text-align: left;
+    
+   
+}
+.tbody_title a{
+    color: black;
+    text-decoration: none;
+}
+
+/* ----------------------------form------------------------ */
+.notice_form{
+    margin: 20px 0 20px 0 ;
+  
+}
+
+.selArray {
+
+    background: none;
+    border: 1px solid #ccc;
+    height: 40px;
+    font-size: 14px
+}
+.selArray_displaynone {
+    display: none;
+}
+
+.notice_form input{
+    height: 40px;
+    width: 360px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.btnNormal  {
+    background: none;
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    height: 40px;
+    
+    color: black;
+    text-decoration: none;
+
+}
+/*_-------------------- 페이징 처리 ----------------------- */
+.paging {
+
+    width: 100%;
+    max-width: 1360px;
+    height: 50px;
+    font-size: 14px;
+
+    padding: 30px 0 30px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.paging_ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.paging_ul li {
+    margin: 0 5px;
+}
+
+.paging_ul a {
+    text-decoration: none;
+    padding: 10px 10px;
+
+    color: #333;
+}
+
+
+.paging_ul a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}

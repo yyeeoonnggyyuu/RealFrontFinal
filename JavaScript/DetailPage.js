@@ -73,11 +73,13 @@
 
         selecTitleElement.textContent = productName;
 
+        
         // 수량 증가 버튼 이벤트
         quantityUp.addEventListener('click', function (e) {
             e.preventDefault();
             let currentValue = parseInt(quantityInput.value) || 1;
             currentValue++;
+            
             updateValues(currentValue);
         });
 
@@ -96,18 +98,23 @@
             // 총 금액 및 적립금 계산
             const totalPrice = productPrice * quantity;
             const rewardPoints = Math.floor(totalPrice * rewardRate);
-
+            
             // 입력 필드 및 DOM 업데이트
             quantityInput.value = quantity;
             selectTotalPriceElement.textContent = `${totalPrice.toLocaleString()}원`;
             selectRewardPointsElement.textContent = `${rewardPoints.toLocaleString()}원`;
-
+           
+    
             // 결제 금액과 수량 업데이트
+
+            
             payPrice.textContent = `${totalPrice.toLocaleString()}원`;
             payQuantity.textContent = `(${quantity}개)`;
+        
 
             // 상세페이지 가격 업데이트
-            selectTotalPriceElement.textContent = `${totalPrice.toLocaleString()}원`;  // 상품금액 업데이트
+            selectTotalPriceElement.textContent = `${totalPrice.toLocaleString()}원`;  
+
         }
 
         // 초기 값 업데이트
@@ -224,3 +231,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 });
+
+// ----------------총 상품 금액 최종 합산-----------------
+
+// document.addEventListener('DOMContentLoaded', function(){
+
+//     const totalPriceTitle = this.getElementById('price_title');
+// })
+
+

@@ -6,155 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="/CSS/DetailPage.css">
     <script src="/JavaScript/DetailPage.js" defer></script>
+    <script src="/JavaScript/header.js" defer></script>
+    
 </head>
 
 <body>
+    <div id="header"></div>
+
     <div class="full_screen">
-    <div class="detail_page">
-        <!-- ---------------- 상세페이지 전체 설정 ---------------- -->
-        <div class="product_detail">
+        <div class="detail_page">
+            <!-- ---------------- 상세페이지 전체 설정 ---------------- -->
+            <div class="product_detail">
 
-            <!-- ----------------상세페이지 이미지---------------- -->
-            <div class="detail_img">
-                <img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/product/big/202404/35b52732a4971e965f2ce448033d881a.jpg"
-                    alt="">
+                <!-- ----------------상세페이지 이미지---------------- -->
+                <div class="detail_img">
+                    <img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/product/big/202404/35b52732a4971e965f2ce448033d881a.jpg"
+                        alt="">
+                </div>
+
+                <!-- ---------------- 상세페이지 설명글 ---------------- -->
+                <div class="detail_text">
+                    <div class="detail_text_header">
+                        <h2 id="detail_name">상품이름</h2>
+                    </div>
+                    <div class="detail_text_seller">
+                        <p id="detail_seller">판매자</p>
+                    </div>
+                    <div class="detail_text_price"><strong id="prdCount_price">0원</strong></div>
+
+                    <table class="detail_text_save_list">
+                        <tr>
+                            <th class="table_left">적립금</th>
+                            <th class="table_right" id="detail_reward_points">0원(1%)</th>
+                        </tr>
+                        <tr>
+                            <td class="table_left">배송비</td>
+                            <td class="table_right" id="detail_delivery_fee">0원</td>
+                            </td>
+                    </table>
+                    <!-- -----------------사이즈 선택 --------------------- -->
+                    <div class="front_option_inner">
+                        <table class="product_option_table">
+                            <th style="font-size: 15px;">
+                                사이즈 (한국)
+                            </th>
+                            <tr>
+                                <td>
+                                    <select id="option_select" class="product_option_size" option_style="select">
+                                        <option value="*" selected="" link_image="">- [필수] 옵션을 선택해 주세요 -</option>
+                                        <option value="**" disabled="" link_image="">-------------------</option>
+                                        <option value="s" link_image="">S (95) </option>
+                                        <option value="m" link_image="">M (100) </option>
+                                        <option value="l" link_image="">L (105) </option>
+                                        <option value="xl" link_image="">XL (110) </option>
+                                        <option value="xxl" link_image="">XXL (115) [품절]</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="option_inner" style="display: none;">
+                        <table class="detail_text_select_list">
+                            <tr>
+                                <td class="select_list_title">
+                                    <p id="select_list_title">상품명</p><br>
+                                    <span class="size_select" id="size_select">select_size</span>
+                                </td>
+                                
+                                <td class="select_list_quantity">
+                                    <span>
+                                        <a href="#" class="quantity_down" id="quantity_down">▼</a>
+                                        <input id="select_list_quantity" name="" value="1" type="text">
+                                        <a href="#" class="quantity_up" id="quantity_up">▲</a>
+                                        <button class="remove_option">x</button>
+                                    </span>
+
+                                </td>
+                                <td class="select_total_count">
+                                    <span id="select_total_price">0원</span>
+                                    <span style="font-size: 12px;">적립금(<span id="select_total_reward_points">0원</span>)</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="total_price">
+                        <span class="price_title"><strong id="">총 상품금액</strong></span>
+                        <span class="price_total"><strong id="pay_price">0원</strong><span id="pay_quantity">(0개)</span>
+                    </div>
+
+
+                    <button class="button_detail_buy"><a href="#">바로구매</a></button>
+
+                    <div class="sub_button_menu">
+                        <button class="like_button"><a href="#">좋아요</a></button>
+                        <button class="basket_button"><a href="#">장바구니</a></button>
+                        <button class="interest_product_button"><a href="#">관심상품</a></button>
+                    </div>
+                </div>
             </div>
 
-            <!-- ---------------- 상세페이지 설명글 ---------------- -->
-            <div class="detail_text">
-                <div class="detail_text_header">
-                    <h2 id="detail_name">상품이름</h2>
-                </div>
-                <div class="detail_text_seller">
-                    <p id="detail_seller">판매자</p>
-                </div>
-                <div class="detail_text_price"><strong id="prdCount_price">0원</strong></div>
-
-                <table class="detail_text_save_list">
-                    <tr>
-                        <th class="table_left">적립금</th>
-                        <th class="table_right" id="detail_reward_points">0원(1%)</th>
-                    </tr>
-                    <tr>
-                        <td class="table_left">배송비</td>
-                        <td class="table_right" id="detail_delivery_fee">0원</td>
-                        </td>
-                </table>
-                <!-- -----------------사이즈 선택 --------------------- -->
-                <div class="front_option_inner">
-                    <table class="product_option_table">
-                        <th style="font-size: 15px;">
-                            사이즈 (한국)
-                        </th>
-                        <tr>
-                            <td>
-                                <select id="option_select" class="product_option_size" option_style="select">
-                                    <option value="*" selected="" link_image="">- [필수] 옵션을 선택해 주세요 -</option>
-                                    <option value="**" disabled="" link_image="">-------------------</option>
-                                    <option value="s" link_image="">S (95) </option>
-                                    <option value="m" link_image="">M (100) </option>
-                                    <option value="l" link_image="">L (105) </option>
-                                    <option value="xl" link_image="">XL (110) </option>
-                                    <option value="xxl" link_image="">XXL (115) [품절]</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                    </table>
-                </div>
-                <div class="option_inner" style="display: none;">
-                    <table class="detail_text_select_list">
-                        <tr>
-                            <td class="select_list_title">
-                                <p id="select_list_title">상품명</p><br>
-                                <span class="size_select" id="size_select">select_size</span>
-                            </td>
-                            <td class="select_list_quantity">
-                                <span>
-                                    <a href="#" class="quantity_down" id="quantity_down">▼</a>
-                                    <input id="select_list_quantity" name="quantity_opt[]" value="1" type="text">
-                                    <a href="#" class="quantity_up" id="quantity_up">▲</a>
-                                    <button class="remove_option">x</button>
-                                </span>
-
-                            </td>
-                            <td class="select_total_count">
-                                <span id="select_total_price">0원</span><br>
-                                <span id="select_total_reward_points">0원</span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="total_price">
-                    <span class="price_title"><strong>총 상품금액</strong></span>
-                    <span class="price_total"><strong id="pay_price">0원</strong><span id="pay_quantity">(0개)</span>
-                </div>
-
-             
-
-                <button class="button_detail_buy"><a href="#">바로구매</a></button>
-
-                <div class="sub_button_menu">
-                    <button class="like_button"><a href="#">좋아요</a></button>
-                    <button class="basket_button"><a href="#">장바구니</a></button>
-                    <button class="interest_product_button"><a href="#">관심상품</a></button>
-                </div>
+            <!-- ----------상품상세설명 후기 버튼------------------  -->
+            <div class="product_detail_description">
+                <div class="button_product_detail_description"><a href="#product_detail_description">상품상세설명</a></div>
+                <div class="button_review"><a href="#review">후 기</a></div>
             </div>
-        </div>
-
-        <!-- ----------상품상세설명 후기 버튼------------------  -->
-        <div class="product_detail_description">
-            <div class="button_product_detail_description"><a href="#product_detail_description">상품상세설명</a></div>
-            <div class="button_review"><a href="#review">후 기</a></div>
-        </div>
 
 
-        <!-- -------------상품상세설명란------------------  -->
+            <!-- -------------상품상세설명란------------------  -->
 
-        <div class="text_product_detail_description" id="product_detail_description">
-            <div class="text_product_detail_description_img"><img
-                    src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/upload/NNEditor/20240410/E1848BE185A5E18489E185A6E186ABE18490E185B5E186A820E1848BE185A5E1848BE185B0E1848BE185B5.jpg"
-                    alt=""></div>
-        </div>
+            <div class="text_product_detail_description" id="product_detail_description">
+                <!-- <div class="text_product_detail_description_img"><img
+                        src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/upload/NNEditor/20240410/E1848BE185A5E18489E185A6E186ABE18490E185B5E186A820E1848BE185A5E1848BE185B0E1848BE185B5.jpg"
+                        alt=""></div> -->
+            </div>
 
-        <!-- ----------------------SNS 형식 후기글------------------ -->
-        <div class="sns_style">
-            <div class="sns_style_title"><a href="#" id="review">스타일</a></div>
-        </div>
-        <div class="detail_page_review_list">
-            <ul class="detail_page_review_list_body">
-                <a href="#">
-                    <li class="detail_page_review_list_item">
-                        <div class="detail_page_review_list_item_img">
-                            <img src="https://fakeimg.pl/262x262/" alt="">
-                        </div>
-                        <div class="detail_page_review_content">
-
-                            <div class="detail_page_review_title">
-                                <img src="https://fakeimg.pl/26x26/" alt="" class="detail_page_review_title_img">
-                                <span class="detail_page_review_title_id">아이디</span>
-                                <span class="detail_page_review_title_like">♡4</span>
-                                <!-- 하트 이미지 다시 넣기  -->
+            <!-- ----------------------SNS 형식 후기글------------------ -->
+            <div class="sns_style">
+                <div class="sns_style_title"><a href="#" id="review">스타일</a></div>
+            </div>
+            <div class="detail_page_review_list">
+                <ul class="detail_page_review_list_body">
+                    <a href="#">
+                        <li class="detail_page_review_list_item">
+                            <div class="detail_page_review_list_item_img">
+                                <img src="https://fakeimg.pl/262x262/" alt="">
                             </div>
-                            <p class="detail_page_review_body_tag">#겨울코디추천 #겨울코디추천 #아우터추천 #연말선물 #연말룩 #사이즈팁 #KICKS</p>
-                        </div>
-                    </li>
-                </a>
-            </ul>
+                            <div class="detail_page_review_content">
 
+                                <div class="detail_page_review_title">
+                                    <img src="https://fakeimg.pl/26x26/" alt="" class="detail_page_review_title_img">
+                                    <span class="detail_page_review_title_id">아이디</span>
+                                    <span class="detail_page_review_title_like">♡4</span>
+                                    <!-- 하트 이미지 다시 넣기  -->
+                                </div>
+                                <p class="detail_page_review_body_tag">#겨울코디추천 #겨울코디추천 #아우터추천 #연말선물 #연말룩 #사이즈팁 #KICKS
+                                </p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+
+
+            </div>
 
         </div>
+
+        <button class="scrollToTopBtn" id="scrollToTopBtn">UP</button>
 
     </div>
 
-    <button class="scrollToTopBtn" id="scrollToTopBtn">UP</button>
-
-</div>
-
+    <div id="footer"></div>
 </body>
+
 
 </html>
