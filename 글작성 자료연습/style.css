@@ -1,0 +1,93 @@
+/* ---------------------사진 파일 선택 ---------------- */
+.cover_form_file {
+    width: 100%;
+    max-width: 1280px;
+    height: 40px;
+    padding: 10px 40px 10px 40px;
+    font-size: 15px;
+}
+
+.form_file_plus {
+    width: 100%;
+    max-width: 1280px;
+    margin-top: 5px;
+    padding: 10px 40px 10px 40px;
+    font-size: 15px;
+}
+
+.item {
+    width: 100%;
+    max-width: 1280px;
+    margin-top: 5px;
+}
+
+.table_hade {
+    width: 200px;
+    height: 60px;
+    border: 1px solid #B5B6B5;
+    background-color: #f8f8f8;
+}
+
+.table_body {
+    width: 1080px;
+    height: 60px;
+    padding-left: 20px;
+    border: 1px solid #B5B6B5;
+    align-items: center;
+    display: inline-flex;
+}
+
+.file-input {
+    display: none;
+}
+
+.select_title {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    border: 1px solid #B5B6B5;
+}
+
+.select_title:hover {
+    background-color: #B5B6B5;
+}
+
+.file-name {
+    color: #555;
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 12px;
+    padding-left: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.file_plus_button {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.file_minus_button {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+}

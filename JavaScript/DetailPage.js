@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         const itemDiv = document.createElement('div');
-        itemDiv.classList.add('item', '/DetailPage.css');
+        itemDiv.classList.add('item');
         itemDiv.id = itemId;
 
         itemDiv.innerHTML = `
