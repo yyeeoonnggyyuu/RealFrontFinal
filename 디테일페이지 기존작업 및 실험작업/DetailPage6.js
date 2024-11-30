@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     let totalQuantity = 0;
     let totalAmount = 0;
-    
-    const productPrice = 50000;
-    const rewardRate = 0.01;
-
-    const point = Math.floor(productPrice * rewardRate);
 
     const updateTotal = (qtyChange, amountChange) => {
         totalQuantity += qtyChange;
         totalAmount += amountChange;
 
-        const rewardPoints = Math.floor(totalAmount * rewardRate);
+        const rewardPoints = Math.floor(totalAmount * 0.01);
 
         document.getElementById('totalQuantity').textContent = totalQuantity;
         document.getElementById('totalAmount').textContent = totalAmount.toLocaleString();
@@ -40,113 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const productName = "에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜";
-
-        // const point = Math.floor(itemPrice * rewardRate).toLocaleString();
-
+        const rewardRate = 0.01;
+        const point = Math.floor(itemPrice * rewardRate).toLocaleString();
 
         const itemDiv = document.createElement('div');
-        itemDiv.classList.add('item', '/DetailPage.css');
+        itemDiv.classList.add('item','/DetailPage.css');
         itemDiv.id = itemId;
 
         itemDiv.innerHTML = `
-
-        <style>
-        .detail_text_select_list {
-            height: 100px;
-            width: 610px;
-            font-size: 10px;
-        }
-           
-        .detail_text_select_list .select_list_title {
-             width: 55%;
-            padding: 20 10 20 0;
-            font-size: 14px;
-            
-        }
-        .select_list_title p {
-            width: 250px !important;
-              font-size: 15px !important;
-        }
-        .size_select {
-          font-size: 15px !important;
-        }
-
-        .detail_text_select_list .select_list_quantity {
-          width: 250px;
-            padding: 20 0;
-            
-        }
-
-.select_list_quantity {
-
-    margin: 0 auto;
-    padding: 0;   
-
-}
-
-.select_list_quantity input {
-    width: 40px;
-    height: 25px;
-    margin-right: 5px;
-    border-radius: 4px;
-}
-
-.increaseBtn,
-.decreaseBtn {
-    width: 20px;
-    height: 25px;
-    display: inline-block;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    font-size: 15px;
-
-    background-color: inherit;
-    border: none;
-    text-decoration: none;
-    color: initial;
-}
-.increaseBtn{
-   margin-right: 20px;
-}
-.increaseBtn:hover,
-.decreaseBtn:hover {
-    background-color: none;
-    font-size: 1.5em;
-}
-
-.remove_option{
-    text-align: right;
-    width: 20px;
-    height: 20px;
-    font-size: 14px;
-    background-color: inherit;
-    border: none;
-    color: #B5B6B5;
-}
-.remove_option:hover{
-    margin: 0;
-    padding: 0;
-    font-size: 1.5rem;
-    cursor: pointer;
-
-    width: 20px;
-    height: 30px;
-
-}
-
-
-.detail_text_select_list .select_total_count {
-
-    width: 20%;
-    padding: 20 0;
-    font-size: 14px;
-    text-align: right;
-    gap: 0;
-}
-
-        </style>
+   
             <table class="detail_text_select_list">
                 <tr>
                     <td class="select_list_title">
@@ -170,32 +67,26 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
 
         event.target.value = '*'; // 다시 기본값으로 변경
-        const rewardPointsSpan = itemDiv.querySelector('.select_total_reward_points');
-        const quantityInput = itemDiv.querySelector('.quantityInput');
-        const amountSpan = itemDiv.querySelector('.select_total_price');
-        
-        let quantity = parseInt(quantityInput.value, 10);
-
-        // 수량 증가 버튼 이벤트
+// 수량 증가 버튼 이벤트
         itemDiv.querySelector('.increaseBtn').addEventListener('click', () => {
-            
+            const quantityInput = itemDiv.querySelector('.quantityInput');
+            const amountSpan = itemDiv.querySelector('.select_total_price');
+            let quantity = parseInt(quantityInput.value, 10);
             quantityInput.value = ++quantity;
 
-            // 금액 업데이트
+             // 금액 업데이트
             const totalAmountForItem = quantity * itemPrice;
             amountSpan.textContent = totalAmountForItem;
-
-            //적립금 계산 및 업데이트
-            const rewardPoints = Math.floor(totalAmountForItem * rewardRate);
-            rewardPointsSpan.textContent = rewardPoints;
 
             // 총합 업데이트
             updateTotal(1, itemPrice);
         });
 
-        // 수량 감소 버튼 이벤트
+// 수량 감소 버튼 이벤트
         itemDiv.querySelector('.decreaseBtn').addEventListener('click', () => {
-            
+            const quantityInput = itemDiv.querySelector('.quantityInput');
+            const amountSpan = itemDiv.querySelector('.select_total_price');
+            let quantity = parseInt(quantityInput.value, 10);
 
             if (quantity > 1) {
                 quantityInput.value = --quantity;
@@ -203,15 +94,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const totalAmountForItem = quantity * itemPrice;
                 amountSpan.textContent = totalAmountForItem;
 
-
-                const rewardPoints = Math.floor(totalAmountForItem * rewardRate);
-                rewardPointsSpan.textContent = rewardPoints;
-
                 updateTotal(-1, -itemPrice);
             }
         });
 
-        // 상품 제거 버튼 이벤트
+// 상품 제거 버튼 이벤트
         itemDiv.querySelector('.remove_option').addEventListener('click', () => {
             const quantity = parseInt(itemDiv.querySelector('.quantityInput').value, 10);
             const totalAmountForItem = quantity * itemPrice;
@@ -219,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
             updateTotal(-quantity, -totalAmountForItem);
 
             itemDiv.remove();
-
+            
             //아이템 삭제 후 itemID 중복 체크를 다시 할수 있도록 한다
             document.getElementById(itemId);
         });

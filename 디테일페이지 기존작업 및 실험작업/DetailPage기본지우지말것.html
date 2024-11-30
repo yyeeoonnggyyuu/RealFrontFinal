@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/CSS/DetailPage.css">
     <script src="/JavaScript/DetailPage.js" defer></script>
     <script src="/JavaScript/header.js" defer></script>
-    <script src="/JavaScript/itemdata.js" defer></script>
-    <script src="/JavaScript/scroll.js" defer></script>
     
 </head>
 
@@ -57,32 +55,51 @@
                             </th>
                             <tr>
                                 <td>
-                                    <select id="itemSelector" class="product_option_size" option_style="select">
+                                    <select id="option_select" class="product_option_size" option_style="select">
                                         <option value="*" selected="" link_image="">- [필수] 옵션을 선택해 주세요 -</option>
                                         <option value="**" disabled="" link_image="">-------------------</option>
-                                        <option value="item1" data-price="50000">S (95) </option>
-                                        <option value="item2" data-price="50000">M (100) </option>
-                                        <option value="item3" data-price="50000">L (105) </option>
-                                        <option value="item4" data-price="50000">XL (110) </option>
-                                        <option value="item5" data-price="50000">XXL (115) [품절]</option>
+                                        <option value="s" link_image="">S (95) </option>
+                                        <option value="m" link_image="">M (100) </option>
+                                        <option value="l" link_image="">L (105) </option>
+                                        <option value="xl" link_image="">XL (110) </option>
+                                        <option value="xxl" link_image="">XXL (115) [품절]</option>
                                     </select>
                                 </td>
                             </tr>
 
                         </table>
                     </div>
+                    <div class="option_inner" style="display: none;">
+                 
+                        <table class="detail_text_select_list">
+                            <tr>
+                                <td class="select_list_title">
+                                    <p id="select_list_title">상품명</p>
+                                    <span class="size_select" id="size_select">select_size</span>
+                                </td>
+                                
+                                <td class="select_list_quantity">
+                                    <span>
+                                        <a href="#" class="quantity_down" id="quantity_down">▼</a>
+                                        <input id="select_list_quantity" name="" value="1" type="text">
+                                        <a href="#" class="quantity_up" id="quantity_up">▲</a>
+                                        <button class="remove_option">x</button>
+                                    </span>
 
-                    <div class="itemsContainer" ></div>
-
-                    <div class="total_price">
-                        <span class="price_title">총 수량</span>
-                        <span class="price_total" id="totalQuantity">0<span>개</span></span>
+                                </td>
+                                <td class="select_total_count">
+                                    <span id="select_total_price">0원</span><br>
+                                    <span style="font-size: 12px;">적립금(<span id="select_total_reward_points">0원</span>)</span>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
+
                     <div class="total_price">
                         <span class="price_title"><strong id="">총 상품금액</strong></span>
-                        <span class="price_total"><strong id="totalAmount">0</strong></span>
+                        <span class="price_total"><strong id="pay_price">0원</strong><span id="pay_quantity">(0개)</span>
                     </div>
-               
+
 
                     <button class="button_detail_buy"><a href="#">바로구매</a></button>
 
