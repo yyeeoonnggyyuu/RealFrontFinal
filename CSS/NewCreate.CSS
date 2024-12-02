@@ -86,7 +86,7 @@
 }
 
 
-.table_hade {
+.tabel_head{
 
     width: 200px;
     height: 60px;
@@ -107,7 +107,7 @@
 
 
 .file-input {
-    display: none;
+    /* display: none; */
 }
 
 
@@ -248,7 +248,7 @@
 
 }
 
-.table_hade_btn {
+.tabel_head_btn {
 
     width: 200px;
     height: 60px;

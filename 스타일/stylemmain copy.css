@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+
+
+}
+
+.full_screen  {
+    margin-top: 215px;
+    width: 1280px;
+    display: block;
+
+}
+
+
+/* -------------------------  banner------------------------ */
+
+.banner{
+    width: 100%;
+    /* max-width: 1280px; */
+    height: 66px;
+    padding: 0;
+    font-size:  50px;
+    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* ------------------------- navigation ------------------------ */
+
+
+.navigation {
+    width: 100%;
+    /* max-width: 1260px; */
+    height: 45px;
+
+    padding-left: 20px;
+    list-style: none;  
+    display: flex;
+    gap: 20px;
+
+    
+}
+.navigation li {
+    margin: 0;
+    padding: 0;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+/* ------------------------- keyword_search ------------------------ */
+
+
+.keyword_search {
+    width: 100%;
+    /* max-width: 1280px; */
+    height: 150px;
+    border-top: 1px solid #B5B6B5;
+    border-bottom: 1px solid #B5B6B5;
+
+    padding-bottom: 10px;
+    list-style: none;  
+    display: flex;
+    gap: 20px;
+    
+    justify-content: center;
+    align-items: center;
+}
+.search_list{
+
+    width: 100px;
+    height: 90px;
+
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.search_list img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search_list p {
+    margin: 5px;
+    text-align: center;
+    font-size: 10px;
+
+}
+.search_list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ------------------------- sorting ------------------------ */
+
+
+.sorting {
+    width: 100%;
+    max-width: 1280px;
+    height: 50px;
+    display: block;
+    text-align: right;
+    font-size: 15px;
+
+    margin-top: 10px;
+}
+
+.sorting a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ----------  컨테이너-------------------- */
+
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+
+    display: flex;
+    height: auto;
+    margin: 0 auto;
+
+}
+
+/*----------  board --------------------*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.board_list_body .item:hover {
+    cursor: pointer;
+}
+
+.board_list_body {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(288px * 4);
+    margin: 0 auto;
+    gap: 0;
+    padding: 0 15px 0 15px;
+
+
+}
+
+/* -----------------아이템 카드------------------  */
+.board_list_body .item {
+
+    margin: 0 0 40px 0;
+    padding: 0 5px 0 5px;
+    width: 325px;
+    height: 480px;
+    font-size: 0;
+    /* border: 2px solid #eee; */
+
+    /* background-color: aqua; */
+    box-sizing: border-box;
+}
+
+
+.board_list_body .item>div {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.board_list_body .item .board_img {
+    width: 325px;
+    height: 350px;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    display: block;
+    text-size-adjust: 100%;
+    font-size: 0;
+    position: relative;
+    transition: filter 0.3s ease;
+
+}
+
+
+.board_list_body .item .board_icon .sold_out_icon {
+
+    width: 30%;
+    /* align-items: center; */
+    position: absolute;
+    z-index: 2;
+    display: none;
+    background-color: initial;
+
+}
+
+
+.sold_out_img {
+    filter: blur(3px);
+}
+
+.board_list_body .item .board_img .product_img {
+    max-width: 100%;
+    /* 최대 너비를 100%로 설정하여 부모 요소의 크기에 맞게 확장 */
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    background-size: auto;
+    /* 원본 크기 그대로 유지 */
+    background-repeat: no-repeat;
+    /* 이미지 반복하지 않도록 설정 */
+    background-position: center;
+    /* 이미지를 요소 중앙에 배치 */
+}
+
+.board_list_body .item .board_content {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    height: 105px;
+    width: 280px;
+    line-height: 18px;
+    margin: 0 auto;
+    margin-top: 13px;
+    padding: 0;
+    row-gap: 10px;
+
+}
+
+.board_list_body .item .board_title {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    height: 40px;
+    width: 100%;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+}
+
+.board_list_body .item .board_price {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    height: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    row-gap: 5px;
+    text-align: left;
+
+}
+
+.board_list_body .item .board_price>span {
+    padding-left: 10px;
+}
+
+.board_list_body .item .board_price>span:first-child {
+    padding-left: 0;
+    text-decoration: line-through;
+}
+
+.board_list_body .item .board_name {
+    font-size: 13px;
+    height: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+}
+
+/* _----------------------------------------------------- */
+
+
+
+
+/* ----------------------SNS 형식 후기글------------------  */
+.sns_style {
+    width: 100%;
+    max-width: 1360px;
+    margin-bottom: 20px;
+    height: 40px;
+
+    font-size: 20px;
+    /* border-top: 1px solid #B5B6B5; */
+    color: black;
+    text-align: left;
+
+}
+
+.sns_style a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.detail_page_review_list {
+
+    width: calc(272x5);
+    height: auto;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.detail_page_review_list_body {
+    width: 100%;
+    max-width: 262px;
+    height: 400px;
+}
+
+.detail_page_review_list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.detail_page_review_list_item_img img {
+    width: 262px;
+    height: 262px;
+    object-fit: contain;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+
+}
+
+.detail_page_review_content {
+    width: 100%;
+
+    padding: 0;
+
+}
+
+.detail_page_review_title {
+    width: 262px;
+    padding: 0;
+    height: 28px;
+    margin-top: 5px;
+    display: flex;
+
+}
+
+.detail_page_review_title_img {
+    justify-content: center;
+    border-radius: 100px;
+    width: 28px;
+    height: 28px;
+
+}
+
+.detail_page_review_title_id {
+    width: 75%;
+    margin-left: 5px;
+
+}
+
+.detail_page_review_title_like {
+
+    /* 만약 좋아요 script 기능 한 후 아이콘 벗어날 시 
+    위의 아이디와 라이크 width 조정하거나 다시 정렬 */
+
+}
+
+.detail_page_review_body_tag {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+}

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             newItemDiv.classList.add('item');
             newItemDiv.innerHTML = `
                  <table>
-                    <th class="table_hade">
+                    <th class="table_head">
                         <label for="file-input">파일 선택</label><br>
                     </th>
                     <td class="table_body">
