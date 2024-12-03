@@ -1,0 +1,97 @@
+
+/* -------------------sns_container---------------- */
+.sns_container{
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: flex;
+
+}
+
+
+.detail_page_review_list_body {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+
+
+}
+
+.detail_page_review_list_item {
+
+    width: 288px;
+    height: 400px;
+    
+    text-align: center;
+
+}
+
+.detail_page_review_list_item_img img {
+    width: 288px;
+    height: 288px;
+    margin-top: 10px;
+    object-fit: contain;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    
+}
+
+/* -------------------리뷰 리스트 --------------- */
+
+
+.detail_page_review_list_item{
+    list-style: none;
+    width: 288px;
+    height: 380px;
+    
+}
+
+
+.detail_page_review_content {
+    width: 100%;
+    padding: 0;
+
+}
+
+.detail_page_review_title {
+    width: 262px;
+    padding: 0;
+    height: 28px;
+    margin-top: 5px;
+    display: flex;
+
+}
+
+.detail_page_review_title_img {
+    justify-content: center;
+    border-radius: 100px;
+    width: 28px;
+    height: 28px;
+
+}
+
+.detail_page_review_title_id {
+    width: 75%;
+    margin-left: 5px;
+
+}
+
+.detail_page_review_title_like {
+
+    /* 만약 좋아요 script 기능 한 후 아이콘 벗어날 시 
+    위의 아이디와 라이크 width 조정하거나 다시 정렬 */
+
+}
+
+.detail_page_review_body_tag {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+}
+

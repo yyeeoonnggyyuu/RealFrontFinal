@@ -18,6 +18,27 @@ document.addEventListener("DOMContentLoaded", () => {
             userId: "아이디2",
             likes: "♡7",
             tags: "#봄패션 #사이즈팁"
+        },
+        { 
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "아이디2",
+            likes: "♡7",
+            tags: "#봄패션 #사이즈팁"
+        },
+        { 
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "아이디2",
+            likes: "♡7",
+            tags: "#봄패션 #사이즈팁"
+        },
+        { 
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "아이디2",
+            likes: "♡7",
+            tags: "#봄패션 #사이즈팁"
         }
     ];
 
@@ -36,30 +57,54 @@ document.addEventListener("DOMContentLoaded", () => {
             userId: "태그2",
             likes: "♡5",
             tags: "#여름상품 #핫딜"
+        },
+        {
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "태그2",
+            likes: "♡5",
+            tags: "#여름상품 #핫딜"
+        },
+        {
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "태그2",
+            likes: "♡5",
+            tags: "#여름상품 #핫딜"
+        },
+        {
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "태그2",
+            likes: "♡5",
+            tags: "#여름상품 #핫딜"
+        },
+        {
+            img: "https://fakeimg.pl/262x262/",
+            userImg: "https://fakeimg.pl/26x26/",
+            userId: "태그2",
+            likes: "♡5",
+            tags: "#여름상품 #핫딜"
         }
     ];
 
     // 데이터 렌더링 함수
     const renderData = (data) => {
-        return `
-            <ul class="detail_page_review_list_body">
-                ${data.map(item => `
-                    <li class="detail_page_review_list_item">
-                        <div class="detail_page_review_list_item_img">
-                            <img src="${item.img}" alt="">
-                        </div>
-                        <div class="detail_page_review_content">
-                            <div class="detail_page_review_title">
-                                <img src="${item.userImg}" alt="" class="detail_page_review_title_img">
-                                <span class="detail_page_review_title_id">${item.userId}</span>
-                                <span class="detail_page_review_title_like">${item.likes}</span>
-                            </div>
-                            <p class="detail_page_review_body_tag">${item.tags}</p>
-                        </div>
-                    </li>
-                `).join("")}
-            </ul>
-        `;
+        return data.map(item => `
+            <li class="detail_page_review_list_item">
+                <div class="detail_page_review_list_item_img">
+                    <img src="${item.img}" alt="">
+                </div>
+                <div class="detail_page_review_content">
+                    <div class="detail_page_review_title">
+                        <img src="${item.userImg}" alt="" class="detail_page_review_title_img">
+                        <span class="detail_page_review_title_id">${item.userId}</span>
+                        <span class="detail_page_review_title_like">${item.likes}</span>
+                    </div>
+                    <p class="detail_page_review_body_tag">${item.tags}</p>
+                </div>
+            </li>
+        `).join("");
     };
 
     // 초기 상태 설정
