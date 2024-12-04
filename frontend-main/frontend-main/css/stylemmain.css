@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+
+
+}
+
+.full_screen  {
+    margin-top: 215px;
+    width: 1280px;
+    display: block;
+
+}
+
+
+/* -------------------------  banner------------------------ */
+
+.banner{
+    width: 100%;
+    /* max-width: 1280px; */
+    height: 30px;
+    padding: 0;
+    font-size:  25px;
+
+    padding: 15px 0 15px 0;
+    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* ------------------------- navigation ------------------------ */
+
+
+.navigation {
+    width: 100%;
+    /* max-width: 1260px; */
+    height: 45px;
+
+    padding-left: 20px;
+    list-style: none;  
+    display: flex;
+    gap: 20px;
+
+    
+}
+.navigation li {
+    margin: 0;
+    padding: 0;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+/* ------------------------- keyword_search ------------------------ */
+
+
+.keyword_search {
+    width: 100%;
+    /* max-width: 1280px; */
+    height: 150px;
+    border-top: 1px solid #B5B6B5;
+    border-bottom: 1px solid #B5B6B5;
+
+    padding-bottom: 10px;
+    list-style: none;  
+    display: flex;
+    gap: 20px;
+    
+    justify-content: center;
+    align-items: center;
+}
+.search_list{
+
+    width: 100px;
+    height: 90px;
+
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.search_list img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+.search_list p {
+    margin: 5px;
+    text-align: center;
+    font-size: 10px;
+
+}
+.search_list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ------------------------- sorting ------------------------ */
+
+
+.sorting {
+    width: 100%;
+    max-width: 1280px;
+    height: 50px;
+    display: block;
+    text-align: right;
+    font-size: 15px;
+
+    margin-top: 10px;
+}
+
+.sorting a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* -------------------sns_container---------------- */
+.sns_container{
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: flex;
+
+}
+
+
+.detail_page_review_list_body {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+
+
+}
+
+.detail_page_review_list_item {
+
+    width: 288px;
+    height: 400px;
+    
+    text-align: center;
+
+}
+
+.detail_page_review_list_item_img img {
+    width: 288px;
+    height: 288px;
+    margin-top: 10px;
+    object-fit: contain;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    
+}
+
+/* -------------------리뷰 리스트 --------------- */
+
+
+.detail_page_review_list_item{
+    list-style: none;
+    width: 288px;
+    height: 380px;
+    
+}
+
+
+.detail_page_review_content {
+    width: 100%;
+    padding: 0;
+
+}
+
+.detail_page_review_title {
+    width: 262px;
+    padding: 0;
+    height: 28px;
+    margin-top: 5px;
+    display: flex;
+
+}
+
+.detail_page_review_title_img {
+    justify-content: center;
+    border-radius: 100px;
+    width: 28px;
+    height: 28px;
+
+}
+
+.detail_page_review_title_id {
+    width: 75%;
+    margin-left: 5px;
+
+}
+
+.detail_page_review_title_like {
+
+    /* 만약 좋아요 script 기능 한 후 아이콘 벗어날 시 
+    위의 아이디와 라이크 width 조정하거나 다시 정렬 */
+
+}
+
+.detail_page_review_body_tag {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+}
+

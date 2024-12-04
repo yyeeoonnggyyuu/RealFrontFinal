@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <script src="//code.jquery.com/jquery-1.12.0.min.js" defer></script>
+</head>
+<header>
+  <!-- 메인 컨테이너 -->
+  <div class="headerContainer">
+    <div class="headerMainContainer">
+      <div class="left">
+        <a href="/">
+          <img src="https://fakeimg.pl/150x35/" alt="logo">
+        </a>
+      </div>
+      <div class="middle">
+        <input class="search" type="text" placeholder="검색어를 입력하세요">
+        <a href="#">
+          <img src="/img/search.svg" alt="검색 버튼" class="search-icon">
+        </a>
+      </div>
+      <div class="right">
+        <a href="/login">
+          <img src="/img/box-arrow-in-right.svg" alt="로그인" class="icon">
+          <span>로그인</span>
+        </a>
+        <a href="/signup">
+          <img src="/img/person-add.svg" alt="회원가입" class="icon">
+          <span>회원가입</span>
+        </a>
+        <!-- <a href="/basket">
+          <img src="/img/basket3.svg" alt="장바구니" class="icon">
+          <span>장바구니</span>
+        </a> -->
+      </div>
+    </div>
+
+    <!-- 카테고리 -->
+    <div class="headerNavContainer">
+      <nav class="shop">
+        <ul class="category">
+          <li id="aaa">
+            <a href="" id="category">
+              <img src="/img/list.svg" alt="카테고리 아이콘">
+              <span>카테고리</span>
+            </a>
+          </li>
+          <li style="color: #e2e2e2; transform: translateX(18px)"> | </li>
+          <li class="hasChild selected categorypond">
+            <a href="/item-sort.html?category=snacks" class="category-link">국내축구</a>
+            <ul class="submenu1 a1">
+              <li>
+                <a href="">
+                  <div class="categorycircle">
+                    <img src="/img/브라이턴 &호프 알비온.png">
+                  </div>
+                  <div class="categorycircle">
+                    울산 HD FC
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="categorycircle">
+                    <img src="/img/브라이턴 &호프 알비온.png">
+                  </div>
+                  <div class="categorycircle">
+                    일단 아무거나 적음
+                  </div>
+                </a>
+              </li>
+              <li><a href="">김천상무 FC</a></li>
+              <li><a href="">FC서울</a></li>
+              <li><a href="">수원FC</a></li>
+              <li><a href="">포항 스틸러스</a></li>
+              <li><a href="">제주 유나이티드</a></li>
+              <li><a href="">대전 하나 시티즌</a></li>
+              <li><a href="">광주 FC</a></li>
+              <li><a href="">전북 현대 모터스</a></li>
+              <li><a href="">대구FC</a></li>
+              <li><a href="">인천 유나이티드</a></li>
+            </ul>
+          </li>
+          <li class="hasChild selected categorypond">
+            <a href="/item-sort.html?category=icecream" class="category-link">해외축구</a>
+            <ul class="submenu1 a2">
+              <li>
+                <a href="">
+                  <div class="categorycircle">
+                    <img src="/img/브라이턴 &호프 알비온.png">
+                  </div>
+                  <div class="categorycircle">
+                    맨체스터 유나이티드
+                  </div>
+                </a>
+              </li>
+              <li><a href="">리버풀</a></li>
+              <li><a href="">맨체스터 시티</a></li>
+              <li><a href="">맨체스터 유나이티드</a></li>
+              <li><a href="">첼시</a></li>
+              <li><a href="">토트넘</a></li>
+              <li><a href="">바이에른 뮌헨</a></li>
+              <li><a href="">유벤투스</a></li>
+              <li><a href="">AC 밀란</a></li>
+              <li><a href="">인터 밀란</a></li>
+              <li><a href="">PSG</a></li>
+              <li><a href="">알 나스르</a></li>
+            </ul>
+          </li>
+          <li class="hasChild selected categorypond">
+            <a href="/item-sort.html?category=bread" class="category-link">국내야구</a>
+            <ul class="submenu1 a3">
+              <li>
+                <a href="">
+                  <div class="categorycircle">
+                    <img src="/img/브라이턴 &호프 알비온.png">
+                  </div>
+                  <div class="categorycircle">
+                    LG
+                  </div>
+                </a>
+              </li>
+              <li><a href="">KIA</a></li>
+              <li><a href="">삼성</a></li>
+              <li><a href="">두산</a></li>
+              <li><a href="">SSG</a></li>
+              <li><a href="">KT</a></li>
+              <li><a href="">롯데</a></li>
+              <li><a href="">한화</a></li>
+              <li><a href="">NC</a></li>
+              <li><a href="">키움</a></li>
+            </ul>
+          </li>
+          <li class="hasChild selected categorypond">
+            <a href="/item-sort.html?category=dairy" class="category-link">여자배구</a>
+            <ul class="submenu1 a4">
+              <li>
+                <a href="">
+                  <div class="categorycircle">
+                    <img src="/img/브라이턴 &호프 알비온.png">
+                  </div>
+                  <div class="categorycircle">
+                    흥국생명
+                  </div>
+                </a>
+              </li>
+              <li><a href="">현대건설</a></li>
+              <li><a href="">IBK기업은행</a></li>
+              <li><a href="">정관장</a></li>
+              <li><a href="">한국도로공사</a></li>
+              <li><a href="">페퍼저축은행</a></li>
+              <li><a href="">GS칼텍스</a></li>
+            </ul>
+          </li>
+          <li class="hasChild selected categorypond">
+            <a href="/item-sort.html?category=fruits" class="category-link">e스포츠</a>
+            <ul class="submenu1 a5">
+              <li>
+                <a href="">
+                  <div class="categorycircle">
+                    <img src="/img/브라이턴 &호프 알비온.png">
+                  </div>
+                  <div class="categorycircle">
+                    T1
+                  </div>
+                </a>
+              </li>
+              <li><a href="">젠지</a></li>
+              <li><a href="">한화</a></li>
+              <li><a href="">KT</a></li>
+              <li><a href="">담원기아</a></li>
+              <li><a href="">광동</a></li>
+              <li><a href="">피어엑스</a></li>
+              <li><a href="">농심</a></li>
+              <li><a href="">DRX</a></li>
+              <li><a href="">브리온</a></li>
+            </ul>
+          </li>
+          <li class="categorypond"><a href="/item-sort.html?category=drinks">기타</a></li>
+        </ul>
+      </nav>
+      <div class="communitysection">
+        <ul>
+          <a href="">STYLE</a>
+          <!-- <a href="">COMMUNITY</a> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  // 모든 haschild 요소를 선택
+  const categoryItems = document.querySelectorAll(".hasChild");
+  categoryItems.forEach((item) => {
+    // 클릭 이벤트 추가
+    item.addEventListener("click", function (event) {
+      event.preventDefault(); // 링크 이동 방지
+
+      // 모든 submenu를 숨김
+      const allSubmenus = document.querySelectorAll(".submenu1");
+      allSubmenus.forEach((submenu) => {
+        submenu.style.opacity = "0";
+        submenu.style.visibility = "hidden";
+      });
+
+      // 현재 클릭된 항목의 submenu 표시/숨김 토글
+      const submenu = this.querySelector(".submenu1");
+      if (submenu.style.visibility === "visible") {
+        submenu.style.opacity = "0";
+        submenu.style.visibility = "hidden";
+      } else {
+        submenu.style.opacity = "1";
+        submenu.style.visibility = "visible";
+      }
+    });
+  });
+
+  // 페이지의 다른 곳을 클릭하면 메뉴 닫기
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".hasChild")) {
+      const allSubmenus = document.querySelectorAll(".submenu1");
+      allSubmenus.forEach((submenu) => {
+        submenu.style.opacity = "0";
+        submenu.style.visibility = "hidden";
+      });
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryLinks = document.querySelectorAll(".category-link");
+
+  categoryLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      // 모든 링크에서 active 클래스 제거
+      categoryLinks.forEach((link) => link.classList.remove("active"));
+
+      // 현재 클릭된 링크에 active 클래스 추가
+      event.target.classList.add("active");
+    });
+  });
+});
+
+</script>
+
+</html>

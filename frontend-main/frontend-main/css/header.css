@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  /* 헤더를 고정 */
+  top: 0;
+  /* 화면의 최상단에 위치 */
+  left: 0;
+  /* 화면의 가장 왼쪽에 위치 */
+  width: 100%;
+  /* 화면 너비 전체를 차지 */
+  z-index: 1000;
+  /* 다른 요소보다 위에 표시되도록 z-index 설정 */
+  background-color: white;
+  /* 배경색 설정 (필요시 조정) */
+  display: flex;
+  justify-content: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 13px;
+}
+
+header img {
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.headerContainer {
+  width: 1360px;
+  margin-top: 20px;
+}
+
+/* 메인 컨테이너 */
+.headerMainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 125px;
+}
+
+/* 왼쪽 로고 */
+.left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/* 검색창 */
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle .search {
+  width: 380px;
+  height: 44px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+img.search {
+  margin-left: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+/* 오른쪽 버튼 */
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  width: 70px;
+  white-space: nowrap;
+}
+
+.right a img {
+  width: 28px;
+  height: 28px;
+}
+
+.right a span {
+  font-size: 17px;
+  margin-top: 6px;
+  overflow-x: auto;
+  /* 화면이 작아져도 스크롤 가능 */
+  white-space: nowrap;
+  /* 줄바꿈 방지 */
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 카테고리 스타일 */
+
+
+.headerNavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 1360px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  white-space: nowrap;
+  /* 줄바꿈 방지 */
+
+}
+
+
+
+.category img {
+  width: 28px;
+  height: 28px;
+}
+
+.category span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 27px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#category {
+  width: 100px;
+  display: flex;
+}
+
+.category li {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 23px;
+
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1em;
+  margin-right: 10px;
+  list-style: none;
+}
+
+.category li a img {
+  transform: translateY(5.3px);
+  width: 28px;
+  height: 28px;
+}
+
+.communitysection a{
+  margin-left: 30px;
+  margin-right: 3px;
+  font-family: "Noto Sans KR", sans-serif;
+
+  font-size: 23px;
+}
+
+
+.hasChild {
+  position: relative; /* submenu의 기준점 */
+}
+
+.categorypond a{
+  position: relative; /* submenu의 기준점 */
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+}
+
+.haschild:hover .submenu1 {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+#aaa {
+  position: relative; /* 기준점 설정 */
+}
+
+/* .submenu1 {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 200;
+  background: #fff;
+  padding: 10px 0;
+  white-space: nowrap;
+  min-width: 140px;
+  margin-top: 10px;
+} */
+
+.a1 {
+  transform: translateX(-185px); /* 필요에 따라 미세 조정 */
+}
+
+.a2 {
+  transform: translateX(-273px); /* 필요에 따라 미세 조정 */
+}
+
+.a3 {
+  transform: translateX(-362px); /* 필요에 따라 미세 조정 */
+}
+
+.a4 {
+  transform: translateX(-450px); /* 필요에 따라 미세 조정 */
+}
+
+.a5 {
+  transform: translateX(-538px); /* 필요에 따라 미세 조정 */
+}
+
+/* 서브 메뉴 항목 */
+.submenu1 {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0s 0.3s, transform 0.3s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateX(-180px); /* 필요에 따라 미세 조정 */
+}
+
+.submenu1.selected {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0s 0s, transform 0.3s;
+}
+
+
+
+.category-link {
+  text-decoration: none;
+  color: #333; /* 기본 글씨 색 */
+  font-weight: normal; /* 기본 글씨 두께 */
+  transition: font-weight 0.3s, color 0.3s;
+}
+
+/* hover 상태에서 글씨 진하게 */
+.category-link:hover {
+  font-weight: bold !important;
+  color: #000 !important; /* hover시 글씨 색을 변경 */
+}
+
+/* 클릭했을 때 글씨 진하게 */
+.hasChild.selected .category-link {
+  font-weight: bold !important;
+  color: #000 !important; /* 클릭 시 글씨 색 변경 */
+}
+
+.categorycircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px; /* 이미지 크기 */
+  height: 100px; /* 이미지 크기 */
+  margin: 5px; /* 간격 추가 */
+}
+
+.categorycircle img {
+  max-width: 100%; /* 이미지가 부모의 크기를 넘지 않도록 */
+  height: auto; /* 이미지 비율 유지 */
+}

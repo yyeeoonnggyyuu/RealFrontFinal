@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/mypageintro.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="content" class="-frame">
+      <section class="manuwrap">
+        <h3>마이페이지</h3>
+        <article class="myshopmain">
+          <h4>나의 쇼핑활동</h4>
+          <ul>
+            <a href=""><li>주문/배송조회</li></a>
+            <a href=""><li>장바구니</li></a>
+            <a href=""><li>관심상품</li></a>
+            <a href=""><li>최근 본 상품</li></a>
+          </ul>
+        </article>
+        <article class="myshopmain">
+          <h4>쇼핑혜택 안내</h4>
+          <ul>
+            <a href=""><li>내 쿠폰정보</li></a>
+            <a href=""><li>적립금 내역</li></a>
+          </ul>
+        </article>
+        <article class="myshopmain">
+          <h4>커뮤니티</h4>
+          <ul>
+            <a href=""><li>내가 쓴 게시글</li></a>
+          </ul>
+        </article>
+        <article class="myshopmain">
+          <h4>나의 정보 관리</h4>
+          <ul>
+            <a href=""><li>배송지 관리</li></a>
+            <a href=""><li>회원 정보 수정</li></a>
+            <a href=""><li>로그아웃</li></a>
+          </ul>
+        </article>
+      </section>
+
+      <section class="contentwrap">
+      <article class="myinfobox">
+        <div>
+          <p>
+            <b class="mambername">나</b>
+            님은
+            <span class="membergrade">[normal]</span>
+            등급입니다.
+          </p>
+          <ul class="displaynone">
+            <li class="displaynone">등급혜택 여기에</li>
+          </ul>
+          <ul class="displaynone">
+            <li class="displaynone">상위 등급으로 가는 법은 여기에</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="bankbook">
+            <li>
+              <a href="">
+                <span class="tit">총주문</span>
+                <span>
+                  <span class="orderprice">0원</span>
+                  (
+                  <span class="ordercount">0</span>
+                  회)
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="tit">쿠폰</span>
+                <span>
+                  <span>0</span>
+                  <em>개</em>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="tit">적립금</span>
+                <span class="mileage">3,000원</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article>
+        <div class="title">
+          나의 주문처리 현황
+          <span class="desc">
+            최근 
+            <em>3개월</em>
+             기준
+          </span>
+        </div>
+        <div class="state">
+          <ul class="order">
+            <li>
+              <strong>입금전</strong>
+              <a href="" class="count">
+                <span class="beforecount">0</span>
+              </a>
+            </li>
+            <li>
+              <strong>배송준비중</strong>
+              <a href="" class="count">
+                <span class="shippedstandby">0</span>
+              </a>
+            </li>
+            <li>
+              <strong>배송중</strong>
+              <a href="" class="count">
+                <span class="shippedbegin">0</span>
+              </a>
+            </li>
+            <li>
+              <strong>배송완료</strong>
+              <a href="" class="count">
+                <span class="shipcomplate">0</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="cs">
+            <li>
+              <strong>취소주문건</strong>
+              <a href="" class="count">
+                <span id="ordercancel">0</span>
+                <em>건</em>
+              </a>
+            </li>
+            <li>
+              <strong>교환주문건</strong>
+              <a href="" class="count">
+                <span id="orderexchange">0</span>
+                <em>건</em>
+              </a>
+            </li>
+            <li>
+              <strong>반품주문건</strong>
+              <a href="" class="count">
+                <span id="orderreturn">0</span>
+                <em>건</em>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article>
+        <div class="title">
+          최근 주문 내역
+          <span class="desc">최근 5개 출력</span>
+          <span class="desc"></span>
+          <a href="">+ more</a>
+        </div>
+        <div class="listwrap">
+          <div class="ec-base-table typelist">
+            <table border="0" summary>
+              <colgroup>
+                <col style="width: 18%;">
+                <col style="width: 10%;">
+                <col style="width: auto;">
+                <col style="width: 18%;">
+                <col style="width: 15%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">주문번호</th>
+                  <th scope="col">이미지</th>
+                  <th scope="col">상품정보</th>
+                  <th scope="col">주문처리상태</th>
+                  <th scope="col">주문일자</th>
+                </tr>
+              </thead>
+              <tbody class="data"></tbody>
+            </table>
+            <p class="loading" style="display: none;">
+              <i class="xi-spinner-3 xi spin"></i>
+            </p>
+            <p class="empty">주문 내역이 없습니다.</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="title">
+          내가 쓴 게시글
+          <span class="desc">최근 게시글 5개 출력</span>
+          <a href="">+ more</a>
+        </div>
+        <div class="listwrap">
+          <div class="ec-base-table typelist">
+            <table border="0" summary>
+              <colgroup>
+                <col style="width: 10%;">
+                <col style="width: 15%;">
+                <col style="width: auto;">
+                <col style="width: 15%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">분류</th>
+                  <th scope="col">제목</th>
+                  <th scope="col">작성일</th>
+                </tr>
+              </thead>
+              <tbody class="data"></tbody>
+            </table>
+            <p class="loading" style="display: none;">
+              <i class="xi-spinner-3 xi spin"></i>
+            </p>
+            <p class="empty">게시물이 없습니다.</p>
+          </div>
+        </div>
+      </article>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+
+.Styleprofile_full_screen  {
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 215px;
+    width: 1280px;
+    display: block;
+  
+
+}
+.Styleprofile_profile a,
+.Styleprofile_follow a,
+.Styleprofile_following a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+/* ------------------------- profile------------------------  */
+.Styleprofile_profile {
+    margin: 20px 0 0 20px;
+    width: 1200px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.Styleprofile_profile_img{
+    margin: 20px 0 0 0;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+    
+}
+.Styleprofile_profile_img img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+.Styleprofile_profile_text {
+    margin: 20px 0 0 20px;
+    padding-top: 10px;
+    width: 1000px;
+    height: 100%;
+
+}
+.Styleprofile_profile_head{
+    
+    height: 36px;
+    margin: 0;
+    padding-left: 10px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.Styleprofile_follow_btn{
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    width: 45px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.Styleprofile_follow_following {
+    height: 36px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+
+}
+.Styleprofile_follow {
+    width: 80px;
+    display: flex;
+
+
+}
+.Styleprofile_following {
+    width: 80px;
+    display: flex;
+
+}
+
+.Styleprofile_profile_information {
+    height: 36px;
+    margin: 10px 0 10px 0;
+    padding-left: 10px;
+    font-size: 12px;
+    align-items: center;
+
+}
+
+/* -----------------------postlist,taglist ------------------------ */
+.Styleprofile_post_tag {
+    margin: 20px 0 0 20px;
+    border-bottom: 1px solid #B5B6B5;
+width: 1200px;
+height: 45px;
+padding: 20px 0 0 0;
+font-size: 20px;
+text-align: left;
+
+}
+.Styleprofile_postlist span,
+.Styleprofile_taglist span{
+  margin: 10px;
+}
+
+.Styleprofile_postlist:hover,
+.Styleprofile_taglist:hover {
+    cursor: pointer;
+}
+.Styleprofile_postlist a,
+.Styleprofile_taglist a{
+    text-decoration: none;
+    color: initial;
+    
+}
+/* -------------------sns_container---------------- */
+.Styleprofile_sns_container{
+
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    
+}
+
+
+.Styleprofile_detail_page_review_list_body {
+
+    width: 100%;
+    gap: 20px; /* 각 아이템 사이의 간격 */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* 기본 리스트 스타일 제거 */
+
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start !important; /* 왼쪽 정렬 */
+}
+
+
+.Styleprofile_detail_page_review_list_item {
+    width: 288px;
+    height: 380px;
+    
+
+    list-style: none; /* 기본 리스트 스타일 제거 */
+}
+
+.Styleprofile_detail_page_review_list_item_img img {
+    width: 100%;
+    height: 288px;
+    margin-top: 10px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+/* -------------------리뷰 리스트 --------------- */
+
+
+.Styleprofile_detail_page_review_content {
+    width: 100%;
+    padding: 0;
+
+}
+
+.Styleprofile_detail_page_review_title {
+    width: 262px;
+    padding: 0;
+    height: 28px;
+    margin-top: 5px;
+    display: flex;
+
+}
+
+.Styleprofile_detail_page_review_title_img {
+
+    border-radius: 100px;
+    width: 28px;
+    height: 28px;
+
+}
+
+.Styleprofile_detail_page_review_title_id {
+    width: 75%;
+    margin-left: 5px;
+
+}
+
+.Styleprofile_detail_page_review_title_like {
+
+    /* 만약 좋아요 script 기능 한 후 아이콘 벗어날 시 
+    위의 아이디와 라이크 width 조정하거나 다시 정렬 */
+
+}
+
+.Styleprofile_detail_page_review_body_tag {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+

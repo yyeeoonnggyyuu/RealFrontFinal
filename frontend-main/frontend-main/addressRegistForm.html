@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/addressRegistForm.css">
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <title>배송지등록</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="content" class="-frame">
+      <section class="manuwrap">
+        <h3>마이페이지</h3>
+        <article class="myshopmain">
+          <h4>나의 쇼핑활동</h4>
+          <ul>
+            <a href=""><li>주문/배송조회</li></a>
+            <a href=""><li>장바구니</li></a>
+            <a href=""><li>관심상품</li></a>
+            <a href=""><li>최근 본 상품</li></a>
+          </ul>
+        </article>
+        <article class="myshopmain">
+          <h4>쇼핑혜택 안내</h4>
+          <ul>
+            <a href=""><li>내 쿠폰정보</li></a>
+            <a href=""><li>적립금 내역</li></a>
+          </ul>
+        </article>
+        <article class="myshopmain">
+          <h4>커뮤니티</h4>
+          <ul>
+            <a href=""><li>내가 쓴 게시글</li></a>
+          </ul>
+        </article>
+        <article class="myshopmain">
+          <h4>나의 정보 관리</h4>
+          <ul>
+            <a href=""><li>배송지 관리</li></a>
+            <a href=""><li>회원 정보 수정</li></a>
+            <a href=""><li>로그아웃</li></a>
+          </ul>
+        </article>
+      </section>
+      <section class="contentwrap">
+        <div class="contentwraptitle"> 배송지 등록</div>
+        <div class="typeNav">
+          <ul class="menu">
+            <!-- <li class="selected">
+              <a href="">
+                주문내역조회
+              </a>
+            </li> -->
+          </ul>
+        </div>
+        <form action="" method="post" target="_self">
+          <div class="addressregistfield">
+            <table>
+              <colgroup>
+                <col style="width: 170px;">
+                <col style="width: auto;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    배송지명
+                    <img src="/img/ico_required.svg" alt="">
+                  </th>
+                  <td>
+                    <input type="text" class="inputTypeText" placeholder>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    성명
+                    <img src="/img/ico_required.svg" alt="">
+                  </th>
+                  <td>
+                    <input type="text" class="inputTypeText" placeholder>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    주소
+                    <img src="/img/ico_required.svg" alt="">
+                  </th>
+                  <td>
+                    <ul>
+                      <li>
+                        <input type="text" id="addressnumber" class="inputTypeText" placeholder="우편번호" readonly />
+                        <button id="SearchAddress" class="btnBasic" type="button" style="cursor: pointer;">주소검색</button>
+                      </li>
+                      <li>
+                        <input type="text" class="addressBox" id="address" placeholder="기본주소" readonly />
+                      </li>
+                      <li>
+                        <input type="text" class="addressBox" id="detailaddress" placeholder="상세주소">
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    일반전화
+                  </th>
+                  <td>
+                    <select name="" id="homeNumber1" class="callbox">
+                      <option value="02">02</option>
+                      <option value="031">031</option>
+                      <option value="032">032</option>
+                      <option value="033">033</option>
+                      <option value="041">041</option>
+                      <option value="042">042</option>
+                      <option value="043">043</option>
+                      <option value="044">044</option>
+                      <option value="051">051</option>
+                      <option value="052">052</option>
+                      <option value="053">053</option>
+                      <option value="054">054</option>
+                      <option value="055">055</option>
+                      <option value="061">061</option>
+                      <option value="062">062</option>
+                      <option value="063">063</option>
+                      <option value="064">064</option>
+                      <option value="0502">0502</option>
+                      <option value="0503">0503</option>
+                      <option value="0504">0504</option>
+                      <option value="0505">0505</option>
+                      <option value="0506">0506</option>
+                      <option value="0507">0507</option>
+                      <option value="070">070</option>
+                    </select>
+                    -
+                    <input type="text" id="homeNumber2" class="callbox">
+                    -
+                    <input type="text" id="homeNumber3" class="callbox">
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    휴대전화
+                    <img src="/img/ico_required.svg" alt="">
+                  </th>
+                  <td>
+                    <select name="" id="phone1" class="callbox">
+                      <option value="031">010</option>
+                      <option value="032">011</option>
+                      <option value="033">016</option>
+                      <option value="041">017</option>
+                      <option value="042">018</option>
+                      <option value="043">019</option>
+                    </select>
+                    -
+                    <input type="text" id="phone2" class="callbox">
+                    -
+                    <input type="text" id="phone3" class="callbox">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="addressSave">
+            <input type="checkbox">
+            <label for="">기본 배송지로 저장</label>
+          </div>
+
+        </form>
+        <div class="buttonGroup">
+          <a href="#none" class="Registbtn sizeS">배송지 등록</a>
+        </div>
+
+
+        <div class="help">
+          <h3>배송주소록 유의사항</h3>
+          <div class="inner">
+            <ul>
+              <li>배송 주소록은 최대 10개까지 등록할 수 있으며, 별도로 등록하지 않을 경우 최근 배송 주소록 기준으로 자동 업데이트 됩니다.</li>
+              <li>기본 배송지는 1개만 저장됩니다. 다른 배송지를 기본 배송지로 설정하시면 기본 배송지가 변경됩니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  document.getElementById('SearchAddress').addEventListener('click', function () {
+    new daum.Postcode({
+      oncomplete: function (data) {
+        var addr = ''; // 주소 변수
+        var extraAddr = ''; // 참고항목 변수
+
+        // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+        if (data.userSelectedType === 'R') { // 도로명 주소
+          addr = data.roadAddress;
+        } else { // 지번 주소
+          addr = data.jibunAddress;
+        }
+
+        // 참고 항목 처리
+        if (data.userSelectedType === 'R') {
+          if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+            extraAddr += data.bname;
+          }
+          if (data.buildingName !== '' && data.apartment === 'Y') {
+            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+          }
+          if (extraAddr !== '') {
+            extraAddr = ' (' + extraAddr + ')';
+          }
+        }
+
+        // HTML 요소에 값 설정
+        document.getElementById('addressnumber').value = data.zonecode; // 우편번호
+        document.getElementById('address').value = addr + extraAddr; // 기본 주소 + 참고 항목
+        document.getElementById('detailaddress').focus(); // 상세 주소 입력 필드로 커서 이동
+      }
+    }).open();
+  });
+</script>
+
+
+</html>

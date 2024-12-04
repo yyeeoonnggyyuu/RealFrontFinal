@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왼쪽 사이드바, 오른쪽 게시판</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /* text-decoration: none;
+            border-collapse: collapse; */
+        }
+
+        body {
+            /* margin-top: 195px; */
+            height: 100vh;
+            display: block;
+            justify-content: center;
+            align-items: flex-start;
+            font-size: 14px;
+        }
+
+
+        /* ------------------------------ */
+
+        .Benner_list {
+
+            height: 140px;
+
+            text-align: center;
+        }
+
+        .Benner_title {
+
+            height: 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        /* ----------------------------------- */
+
+        .Product_ListMenu {
+
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+
+
+        }
+
+        .prdCount {
+
+            height: 40px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        .prdCount strong{
+            padding: 0 5px 0 5px;
+        }
+
+
+
+        .selArray {
+            background: none;
+            /* 배경 초기화 */
+            border: 1px solid #ccc;
+            /* 필요 시 추가 */
+            height: 40px;
+            font-size: 14px;
+
+        }
+
+        .selArray_displaynone {
+            display: none;
+        }
+
+        /* ------------------------------- */
+
+
+        .container {
+           
+            display: flex;
+            /* 수평 배치 */
+            /* width: 1940px; */
+            /* 콘텐츠 영역의 너비  1941px */
+            height: 100%;
+            /* 높이는 100%로 설정 (flex 부모로 중앙 배치) */
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        /* board */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .board_list_body .item:hover {
+            /* 배경색 변화 */
+            background-color: rgba(0, 0, 0, 0.1);
+            /* 살짝 어두운 배경색 */
+
+            /* 그림자 효과 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            /* 가벼운 그림자 */
+
+            /* 확대 효과 */
+            transform: scale(1.05);
+            /* 5% 확대 */
+
+            /* 부드러운 전환 효과 */
+            transition: all 0.3s ease;
+            /* 모든 속성에 대해 0.3초 동안 부드럽게 전환 */
+        }
+
+        .board_list_body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* max-width: 1920px; */
+            max-width: calc(338.5px *4);
+            margin: 0 auto;
+            gap: 0;
+            padding: 0 15px 0 15px;
+            justify-content: left;
+
+        }
+
+        .board_list_body .item {
+
+            margin: 0 0 40px 0;
+            padding: 0 5px 0 5px;
+            width: 338.5px;
+            height: 466.688px;
+            font-size: 0;
+            border: 2px solid #eee;
+
+            box-sizing: border-box;
+
+
+
+        }
+
+
+        .board_list_body .item>div {
+            display: inline-block;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .board_list_body .item .board_img {
+            width: 278.5px;
+            height: 348.125px;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 100%;
+            display: block;
+            text-size-adjust: 100%;
+            background-image: url('https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/product/big/202407/2c251619948664c4233ec74c0dcb12a6.jpg');
+            font-size: 0;
+
+            background-size: cover;
+            /* 이미지 크기를 부모에 맞게 조정 */
+            background-position: center;
+            /* 이미지 가운데 정렬 */
+        }
+
+        .board_list_body .item .board_content {
+            display: flex;
+            flex-direction: column;
+            font-size: 15px;
+            height: 105.562px;
+            width: 278.5px;
+            line-height: 18.2px;
+            margin: 0 auto;
+            margin-top: 13px;
+            padding: 0;
+            row-gap: 10px;
+
+        }
+
+        .board_list_body .item .board_title {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            height: 39.1875px;
+            width: 100%;
+            line-height: 18.2px;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+
+        }
+
+        .board_list_body .item .board_price {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 13px;
+            height: 18.1875px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            row-gap: 5px;
+            text-align: left;
+
+        }
+
+        .board_list_body .item .board_price>span {
+            padding-left: 10px;
+        }
+
+        .board_list_body .item .board_price>span:first-child {
+            padding-left: 0;
+            text-decoration: line-through;
+        }
+
+        .board_list_body .item .board_name {
+            font-size: 13px;
+            height: 18.1875px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="Benner_list">
+            <div class="Benner_title">
+                <h2>베너</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="Product_ListMenu">
+        <div class="prdCount">total <strong>22</strong> items.</div>
+        <div class="selectArray">
+            <div class="sort">
+                <select id="selArray" name="selArray" class="selArray">
+                    <option value="" class="selArray_list">신상품
+                    </option>
+                    <option value="" class="selArray_list">상품명
+                    </option>
+                    <option value="" class="selArray_list">낮은가격
+                    </option>
+                    <option value="" class="selArray_list">높은가격
+                    </option>
+                    <option value="" class="selArray_list">제조사
+                    </option>
+                    <option value="" class="selArray_list">사용후기
+                    </option>
+                </select>
+            </div>
+            <span class="selArray_displaynone"><a href="#none" class="btnCompare"
+                    onclick="EC_ListAction.setProductCompare();">상품비교</a></span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="board_list_body">
+                    <div class="item">
+                        <div class="board_img"><img src="" alt="이미지"></div>
+                        <div class="board_content">
+                            <div class="board_title"><a href="#">ADIDAS 아르헨티나 1994 RETRO AWAY #10 (XS~2XL)</a></div>
+                            <div class="board_price"><span>209,000원</span><span>99,000원</span><span>53%</span></div>
+                            <div class="board_name">Official Licensed Product</div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="board_img"><img src="" alt="이미지"></div>
+                        <div class="board_content">
+                            <div class="board_title"><a href="#">ADIDAS 아르헨티나 1994 RETRO AWAY #10 (XS~2XL)</a></div>
+                            <div class="board_price"><span>209,000원</span><span>99,000원</span><span>53%</span></div>
+                            <div class="board_name">Official Licensed Product</div>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <div class="board_img"><img src="" alt="이미지"></div>
+                        <div class="board_content">
+                            <div class="board_title"><a href="#">ADIDAS 아르헨티나 1994 RETRO AWAY #10 (XS~2XL)</a></div>
+                            <div class="board_price"><span>209,000원</span><span>99,000원</span><span>53%</span></div>
+                            <div class="board_name">Official Licensed Product</div>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <div class="board_img"><img src="" alt="이미지"></div>
+                        <div class="board_content">
+                            <div class="board_title"><a href="#">ADIDAS 아르헨티나 1994 RETRO AWAY #10 (XS~2XL)</a></div>
+                            <div class="board_price"><span>209,000원</span><span>99,000원</span><span>53%</span></div>
+                            <div class="board_name">Official Licensed Product</div>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <div class="board_img"><img src="" alt="이미지"></div>
+                        <div class="board_content">
+                            <div class="board_title"><a href="#">ADIDAS 아르헨티나 1994 RETRO AWAY #10 (XS~2XL)</a></div>
+                            <div class="board_price"><span>209,000원</span><span>99,000원</span><span>53%</span></div>
+                            <div class="board_name">Official Licensed Product</div>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <div class="board_img"><img src="" alt="이미지"></div>
+                        <div class="board_content">
+                            <div class="board_title"><a href="#">ADIDAS 아르헨티나 1994 RETRO AWAY #10 (XS~2XL)</a></div>
+                            <div class="board_price"><span>209,000원</span><span>99,000원</span><span>53%</span></div>
+                            <div class="board_name">Official Licensed Product</div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

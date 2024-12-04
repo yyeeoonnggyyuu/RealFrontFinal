@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer PPT</title>
+  <link rel="stylesheet" href="/css/opening.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- 참고 https://www.youtube.com/watch?v=qK-OwM31r9o -->
+</head>
+
+<body>
+  <div class="startScreen">
+    <p>워라벨팀 파이널 프로젝트 기획 발표</p>
+    <span style="font-size: 20px;">조원: 강인구(팀장), 정현수, 곽태온, 최연규</span>
+  </div>
+  <div class="mainContent">
+
+    <div class="sticky">
+      <div class="intro">
+        <span>0. 목차</span>
+        <p>1. 홈페이지 제작 목표</p>
+        <p>2. 홈페이지 디자인 및 기능 기획</p>
+        <p>3. 사용 기술</p>
+        <p>4. 개발 일정</p>
+      </div>
+      <div class="section">
+        <div class="title">1. 홈페이지 제작 목표</div>
+        <div class="content" id="C1">
+          <p style="font-size: 25px;">&nbsp;* 홈페이지 제작 목표 설정</p>
+          <p style="font-size: 25px;">만들려는 홈페이지 : 축구 관련 플랫폼(커뮤니티+쇼핑몰)</p>
+          <p style="font-size: 25px;">&nbsp;* 타겟 유저</p>
+          <p style="font-size: 25px;">홈페이지 예상 주요 고객층 : 10대 후반 ~ 30대 초반의 남성</p>
+          <p style="font-size: 25px;">축구 관련 물품을 거래하고 싶은 사람들 : 중고거래, 경매, 공식몰</p>
+          <p style="font-size: 25px;">축구관련 수다하고 싶은 사람들 : 커뮤니티 게시판</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="title">2. 홈페이지 디자인 및 기능 기획</div>
+        <div class="content" id="C2">
+          <div class="ccc">&nbsp;* 주요기능&emsp;<a href="https://superior.kr/" target="_blank">참고사이트: 슈퍼리얼</a>
+          </div>
+          <p style="font-size: 25px;">쇼핑몰&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;커뮤니티</p>
+          <img src="/img/쇼핑몰.png">
+          <img src="/img/커뮤니티.png">
+          </div>
+      </div>
+      <div class="section">
+        <div class="title">3. 사용 기술</div>
+        <div class="content" id="C3">
+          <p style="font-size: 25px;">프론트엔드: HTML, CSS, JavaScript, React</p>
+          <p style="font-size: 25px;">백엔드: Spring Boot</p>
+          <p style="font-size: 25px;">데이터베이스: MySQL</p>
+          <p style="font-size: 25px;">배포 방식: AWS</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="title">4. 개발 일정</div>
+        <div class="content" id="C4">
+          <img src="/img/11월 일정.png">
+          <img src="/img/12월 일정.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="endScreen">감사합니다.</div>
+
+
+
+
+  <script>
+    
+class FolderScroll {
+  constructor(wrapper, sticky) {
+    this.wrapper = wrapper;
+    this.sticky = sticky;
+    this.children = this.sticky.querySelectorAll('.section');
+    this.length = this.children.length;
+    this.headerVh = 6;
+    this.contentVh = 100 - this.headerVh * this.length;
+    this.start = 0;
+    this.end = 0;
+  }
+
+  init() {
+    this.start = this.wrapper.offsetTop+200;
+    this.end = this.wrapper.offsetTop + this.wrapper.offsetHeight - innerHeight-200;
+
+    this.children.forEach((child, i) => {
+      child.style.bottom = -100 + this.headerVh * (this.length - i) + 'vh';
+      child.querySelector('.title').style.height = this.headerVh + 'vh';
+      child.querySelector('.content').style.height = this.contentVh + 'vh';
+    });
+  }
+
+  animate() {
+
+    this.children.forEach((child, i) => {
+      const unit = (this.end - this.start) / this.length;
+      const s = this.start + unit * i +150;
+      const e = this.start + unit * (i + 1);
+
+      if (scrollY <= s) {
+        child.style.transform = `translate3d(0, 0, 0)`;
+      } else if (scrollY >= e) {
+        child.style.transform = `translate3d(0, ${-this.contentVh}%, 0)`;
+      } else {
+        child.style.transform = `translate3d(0, ${(scrollY - s) / (unit-150) * (-this.contentVh)}%, 0)`;
+      }
+    });
+  }
+
+}
+
+// 초기화 및 이벤트 리스너 등록
+document.addEventListener('DOMContentLoaded', () => {
+  const mainContent1 = document.querySelector('.mainContent');
+  const sticky = document.querySelector('.sticky');
+  const folderScroll = new FolderScroll(mainContent1, sticky);
+
+  folderScroll.init();
+
+  window.addEventListener('scroll', () => folderScroll.animate());
+  window.addEventListener('resize', () => folderScroll.init());
+});
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+html, body{
+  margin: 0 auto;
+  height: 4000px;
+  font-family: "Jua", sans-serif;
+}
+
+.startScreen{
+  padding-top: 4vh;
+  height: 98vh;
+  font-size: 7vh;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+img{
+  width: 840px;
+  height: 500px;
+  object-fit: cover;
+}
+.mainContent{
+  background-color: antiquewhite;
+  border-top: 1px solid #191919;
+  border-bottom: 1px solid #191919;
+  width: 100%;
+  height: 300vh;
+  position: relative;
+}
+
+.sticky{
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.intro span{
+  font-size: 35px;
+  font-weight: 500;
+  position: relative;
+  top: 10px;
+}
+
+.intro p{
+  font-size: 30px
+}
+
+.section{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #fafafa;
+}
+
+.title{
+  border-top: 1px solid #191919;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+
+.ccc{
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+}
+
+#C2_main{
+  width : 1400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#C2_Img{
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+}
+.Inpng{
+  display: flex;
+  flex-direction: column;
+}
+
+.endScreen{
+  padding-top: 4vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7vh;
+  text-align: center;
+  background-color: blanchedalmond;
+}

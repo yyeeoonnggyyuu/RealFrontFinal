@@ -1,0 +1,266 @@
+/* * {
+    margin: 0;
+    padding: 0;
+}
+ */
+
+.New_Create_full_screen {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 215px;
+
+}
+/* ----------------------- 전체적인 fome 크기-------------------------- */
+.NewCreate_write_container {
+    display: block;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ------------------게시글 작성----------------- */
+.NewCreate_write_header {
+
+    width: 1280px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px 0 20px 0;
+
+}
+
+/* -----------------select 전체적인 폼양식--------------------- */
+.NewCreate_select_01 {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    color: #B5B6B5;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    gap: 30px;
+
+
+   
+}
+
+.NewCreate_select_01_01 {
+    width: 45%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.NewCreate_select_list {
+    text-align: left;
+    width: 100%;
+    max-width: 610px;
+    height: 40px;
+}
+
+.NewCreate_select_list:focus {
+    border: 2px solid #007bff;
+}
+
+.NewCreate_select_list option:hover {
+    background-color: #007bff;
+}
+
+/* ---------------------사진 파일 선택 ---------------- */
+/* .NewCreate_text_line{
+    width: 100%;
+    max-width: 1280px;
+    display: block;
+
+} */
+.NewCreate_cover_form_file {
+
+    font-size: 15px;
+    padding-top: 10px;  
+
+}
+
+.NewCreate_cover_form_file table {
+    margin: 0 auto;
+    padding: 0;
+
+    width: 1280px;
+
+    display: flex;
+    justify-content: center;
+
+}
+.NewCreate_cover_form_file thead {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid black;
+    background-color: #B5B6B5;
+}
+.NewCreate_cover_form_file thead h2{
+
+    text-align: center;
+
+}
+.NewCreate_cover_form_file tbody {
+    width: 75%;
+
+    border: 1px solid black;
+
+    border-left: none;
+}
+.NewCreate_cover_form_file td {
+    padding-left: 10px;
+
+}
+
+/* -----------------파일선택 버튼------------------- */
+.NewCreate_select_title {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.NewCreate_3s ease;
+    border: 1px solid #B5B6B5;
+}
+
+.NewCreate_select_title:hover {
+    background-color: #B5B6B5;
+}
+
+.NewCreate_file-name {
+    color: #555;
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 12px;
+    padding-left: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.NewCreate_file_plus_button {
+ font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+
+    color: black;
+    text-decoration: none;
+
+}
+.NewCreate_file_minus_button {
+    font-size: 20px;
+       width: 30px;
+       height: 30px;
+       margin-left: auto;
+       margin-right: 20px;
+   
+       color: black;
+       text-decoration: none;
+   
+   }
+
+
+
+
+/* ----------------------- 제목 및 본문-------------------------- */
+
+
+
+.NewCreate_cover_form_file input[type="text"] {
+    width: 300%;
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+
+}
+
+.NewCreate_table_body input:focus {
+    border: 2px solid blue;
+    background-color: #f0f8ff;
+    caret-color: black;
+}
+
+.NewCreate_table_body_content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    display: inline-flex;
+}
+
+
+.NewCreate_table_body_content textarea {
+    width:  850px; /* 부모 td의 너비를 맞추기 위해 100%로 설정 */
+    height: 400px; /* 부모 td의 높이를 맞추기 위해 100%로 설정 */
+    padding: 50px; /* 20px의 내부 여백 추가 */
+    box-sizing: border-box; /* padding을 포함한 크기 계산 */
+    border: 1px solid #ccc; /* 테두리 */
+    resize: none; /* textarea 크기 조정 비활성화 */
+
+}
+
+.NewCreate_table_body_content textarea:focus {
+    border: 2px solid blue;
+    background-color: #f0f8ff;
+    caret-color: black;
+}
+
+/* ----------------------- 버튼----------------------- */
+.NewCreate_btn-head{ 
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    font-size: 15px;
+
+}
+
+.NewCreate_btn-head table {
+    display: flex;
+}
+.NewCreate_btn-list,
+.NewCreate_btn-primary,
+.NewCreate_btn-danger {
+    height: 35px;
+    width: 110px;
+
+}
+.NewCreate_btn-head thead {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.NewCreate_table_body_btn {
+    width: 360%;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+
+}
