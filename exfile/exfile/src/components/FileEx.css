@@ -1,0 +1,64 @@
+/* 이미지 입력 부분 */
+.NewCreate_image_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.NewCreate_image_input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.NewCreate_RemoveBtn {
+  padding: 5px 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.NewCreate_RemoveBtn:hover {
+  background-color: #c0392b;
+}
+
+.NewCreate_AddBtn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.NewCreate_AddBtn:hover {
+  background-color: #45a049;
+}
+
+.NewCreate_RemoveAllBtn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.NewCreate_RemoveAllBtn:hover {
+  background-color: #e67e22;
+}
+
+.NewCreate_RemoveSelectedBtn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.NewCreate_RemoveSelectedBtn:hover {
+  background-color: #2980b9;
+}
