@@ -2,93 +2,15 @@ import React, { useState, useRef } from "react";
 import "./NewCreate.css";
 
 const NewCreate = () => {
-  const [images, setImages] = useState([]); // 이미지 리스트
-  const [existingFiles, setExistingFiles] = useState(new Set()); // 중복된 이미지를 막기 위한 Set
-
-  // 이미지 추가 함수
-  const addImageInput = () => {
-    if (images.length >= 5) {
-      alert('최대 5개의 이미지만 업로드할 수 있습니다.');
-      return;
-    }
-
-    setImages((prevImages) => [
-      ...prevImages,
-      { id: Date.now(), file: null, fileName: '', checked: false },
-    ]);
-  };
-
-  // 파일 선택 시 처리
-  const handleFileChange = (index, event) => {
-    const file = event.target.files[0];
-    const newImages = [...images];
-    const previousFileName = newImages[index].fileName;
-
-    if (file) {
-      if (existingFiles.has(file.name) && file.name !== previousFileName) {
-        alert('이미 이 이미지를 선택했습니다.');
-        event.target.value = null; // 필드를 초기화
-        return;
-      }
-
-      // 중복이 아닐 경우, Set에 추가하고 파일 이름 업데이트
-      if (previousFileName) {
-        setExistingFiles((prevFiles) => {
-          const newFiles = new Set(prevFiles);
-          newFiles.delete(previousFileName); // 이전 파일 이름 제거
-          return newFiles;
-        });
-      }
-      setExistingFiles((prevFiles) => new Set(prevFiles).add(file.name));
-
-      newImages[index].file = file;
-      newImages[index].fileName = file.name;
-      setImages(newImages);
-    } else {
-      if (previousFileName) {
-        setExistingFiles((prevFiles) => {
-          const newFiles = new Set(prevFiles);
-          newFiles.delete(previousFileName);
-          return newFiles;
-        });
-      }
-      newImages[index].file = null;
-      newImages[index].fileName = '';
-      setImages(newImages);
-    }
-  };
-
-  // 체크박스 상태 변경
-  const handleCheckboxChange = (index) => {
-    const newImages = [...images];
-    newImages[index].checked = !newImages[index].checked;
-    setImages(newImages);
-  };
-
-  // 체크된 이미지 삭제
-  const removeCheckedImages = () => {
-    const newImages = images.filter((image) => !image.checked);
-    setImages(newImages);
-
-    // 중복된 파일 이름 제거
-    const newExistingFiles = new Set(newImages.map((image) => image.fileName));
-    setExistingFiles(newExistingFiles);
-  };
-  // 대표 이미지 레이블 업데이트
-  const updateRepresentativeLabel = () => {
-    const items = images;
-
-    // 대표 이미지 레이블을 첫 번째 항목에만 추가
-    return items.length > 0 ? (
-      <span className="rep-img-label">대표 이미지</span>
-    ) : null;
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
+  const MAX_IMAGES = 5;
+  const [imageInputs, setImageInputs] = useState([
+    <div key={0}>
+      <input type="file" name="files" accept="image/*" required />
+      <span className="NewCreate_RepresentativeTag">대표</span>
+    </div>,
+  ]);
+  const [fileNames, setFileNames] = useState([]);
+  const [checkedImages, setCheckedImages] = useState([]);
   const [formData, setFormData] = useState({
     tag_id: "@아이디",
     tag_product: "@상품",
@@ -98,8 +20,50 @@ const NewCreate = () => {
   });
   const formRef = useRef(null);
 
+  const addImageInput = () => {
+    if (imageInputs.length < MAX_IMAGES) {
+      setImageInputs([
+        ...imageInputs,
+        <div key={imageInputs.length}>
+          <input
+            type="file"
+            name="files"
+            accept="image/*"
+            required
+            onChange={(e) => handleFileChange(e)}
+          />
+        </div>,
+      ]);
+    }
+  };
 
-  // 폼 제출 시 추가적인 검증 및 처리
+  const handleFileChange = (e) => {
+    const fileName = e.target.files[0]?.name;
+    if (fileNames.includes(fileName)) {
+      alert("같은 파일을 중복해서 등록할 수 없습니다.");
+      e.target.value = ""; // 파일 입력 초기화
+    } else {
+      setFileNames([...fileNames, fileName]);
+    }
+  };
+
+  const handleImageCheckboxChange = (index) => {
+    setCheckedImages((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
+
+  const removeCheckedImages = () => {
+    setImageInputs(imageInputs.filter((_, index) => !checkedImages.includes(index)));
+    setCheckedImages([]);
+    setFileNames(fileNames.filter((_, index) => !checkedImages.includes(index)));
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -132,32 +96,21 @@ const NewCreate = () => {
     }
 
     // 이미지 첨부 체크
-    if (images.length === 0 || images.every((image) => !image.file)) {
-      alert('적어도 하나의 이미지를 업로드해야 합니다.');
+    if (fileNames.length === 0) {
+      alert("이미지를 하나 이상 첨부해주세요.");
       return;
     }
-    // ----------------------이거 없으면 잘되는데 이건 콘솔로그 찍어보는건데 에러뜨네----
 
-    // // 옵션 데이터 가져오기
-    //   const selectedOptions = {
-    //     sport: document.querySelector(".NewCreate_option_form_select select:nth-child(1)").value,
-    //     team: document.querySelector(".NewCreate_option_form_select select:nth-child(2)").value,
-    //     size: document.querySelector(".NewCreate_option_form_select select:nth-child(3)").value,
-    //     homeAway: document.querySelector(".NewCreate_option_form_select select:nth-child(4)").value,
-    //   };
-
-    //   // 제출 데이터 확인
-    //   const submittedData = {
-    //     ...formData,
-    //     images: images.map((image) => image.fileName), // 업로드된 이미지 파일 이름 리스트
-    //     selectedOptions, // 선택된 옵션들
-    //   };
-
-    //   console.log("폼 제출 데이터:", submittedData);
-
+    // 폼 제출 성공
     alert("폼이 성공적으로 제출되었습니다!");
-
-
+    formRef.current.reset();
+    setImageInputs([
+      <div key={0}>
+        <input type="file" name="files" accept="image/*" required />
+        <span className="NewCreate_RepresentativeTag">TitleImage</span>
+      </div>,
+    ]);
+    setFileNames([]);
     setFormData({
       tag_id: "@아이디",
       tag_product: "@상품",
@@ -165,16 +118,14 @@ const NewCreate = () => {
       form_title: "제목을 입력해주세요",
       form_content: "",
     });
-    setImages([]);
-    setExistingFiles(new Set());
   };
 
   return (
     <div className="NewCreate_full_screen">
       <form ref={formRef} className="NewCreate_Form" onSubmit={handleFormSubmit}>
         <h2 className="NewCreate_TitleText">게시글 작성</h2>
-        {/* 옵션 선택 */}
-        <div className="NewCreate_option_form">
+{/* 옵션 선택 */}
+<div className="NewCreate_option_form">
           <div className="NewCreate_option_form_select">
             <select className="NewCreate_select_list">
               <option value="*" disabled>- 스포츠를 선택해 주세요 -</option>
@@ -231,41 +182,36 @@ const NewCreate = () => {
           <div className="NewCreate_text_cover_file">
             <label className="NewCreate_Name_file">이미지 등록</label>
             <ul className="NewCreate_image_list_file">
-              {images.map((item, index) => (
-                <li key={item.id} className="NewCreate_f">
-                  {index === 0 && updateRepresentativeLabel()}
-                  {index !== 0 && (
+              {imageInputs.map((input, index) => (
+                <li key={index} className="NewCreate_f">
+                  {input}
+                  {index > 0 && (
                     <input
                       type="checkbox"
-                      className="img-checkbox"
-                      checked={item.checked}
-                      onChange={() => handleCheckboxChange(index)}
+                      className="NewCreate_img_checkbox"
+                      checked={checkedImages.includes(index)}
+                      onChange={() => handleImageCheckboxChange(index)}
                     />
                   )}
-                  <input
-                    type="file"
-                    name="files"
-                    accept="image/*"
-                    required
-                    onChange={(e) => handleFileChange(index, e)}
-                  />
-                  <span>{item.fileName}</span>
                 </li>
               ))}
             </ul>
-            <button type="button" className="NewCreate_Btn_add" onClick={addImageInput}>
+            <button
+              type="button"
+              className="NewCreate_Btn_add"
+              onClick={addImageInput}
+              disabled={imageInputs.length >= MAX_IMAGES}
+            >
               + 이미지 추가
             </button>
-
             <button
               type="button"
               className="NewCreate_Btn_remove"
               onClick={removeCheckedImages}
-              disabled={images.length <= 1}
+              disabled={checkedImages.length === 0}
             >
-              체크된 이미지 삭제
+              선택 이미지 삭제
             </button>
-
           </div>
 
           {/* 태그 및 텍스트 입력란 */}

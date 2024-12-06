@@ -13,7 +13,7 @@
     height: auto;
     justify-content: center;
     align-items: center;
-}
+}  
 
 /* 게시글 작성 */
 .NewCreate_TitleText {
@@ -51,6 +51,14 @@
     height: 40px;
 
 }
+.NewCreate_select_list:focus {
+    border: 2px solid #007bff;
+}
+
+.NewCreate_select_list option:hover {
+    background-color: #007bff;
+}
+
 
 
 /* ------- 텍스트 양식 전체 크기지정------------ */
@@ -152,7 +160,11 @@
     align-items: center;
     justify-content: center;
 }
-
+.NewCreate_Text_input:focus {
+    border: 2px solid blue;
+    background-color: #f0f8ff;
+    caret-color: black;
+}
 .cover_form_TextArea {
     display: flex;
     width: 80%;
@@ -168,6 +180,12 @@
     align-items: center;
     justify-content: center;
 
+}
+.cover_form_TextArea textarea:focus {
+    border: 2px solid blue;
+    background-color: #f0f8ff;
+    caret-color: black;
+    padding: 5px;
 }
 .cover_form_TextArea textarea {
     margin-left: 15px;

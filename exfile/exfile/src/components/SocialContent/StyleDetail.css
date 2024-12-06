@@ -112,8 +112,8 @@
   
   .StyleDetail_prev {
     position: absolute;
-    top: 70%;
-    right: 69.7%;
+    top: 80%;
+    right: 70%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -124,8 +124,8 @@
   }
   .StyleDetail_next {
     position: absolute;
-    top: 70%;
-    left: 69.7%;
+    top: 80%;
+    left: 70%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -190,12 +190,20 @@
 .StyleDetail_container_title{
     height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 640px;
     font-size: 20px;
     font-weight: bold;
-
+}
+.more_btn{
+    all: unset;
+    font-size: 16px;
+    color: #B5B6B5;
+    
+}
+.more_Btn:hover{
+    cursor: pointer;
 }
 .StyleDetail_container_img{
     width: 640px;
