@@ -11,10 +11,9 @@ import SearchProfile from "./components/SearchPages/SearchProfile.js";
 import SearchStyle from "./components/SearchPages/SearchStyle.js";
 import TotalSearchHead from "./components/SearchPages/TotalSearchHead.js";
 import StyleDetail from "./components/SocialContent/StyleDetail.js";
-
 import Stylemmain from "./components/SocialContent/Stylemmain.js";
-//이거 하나 남았따 
 import Styleprofile from "./components/SocialContent/StyleProfile/Styleprofile.js";
+import StyleprofileMyInterestProduct from "./components/SocialContent/StyleProfile/StyleprofileMyInterestProduct.js";
 
 
 
@@ -26,19 +25,19 @@ function App() {
         <Routes>
           <Route path="/BoardshoppingLi" element={<BoardshoppingLi />} />
           <Route path="/boardshoppingsearch" element={<BoardshoppingSearch />} />
-
           <Route path="/detailpage" element={<DetailPage />} />
-          <Route path="/NewCreate" element={<NewCreate />} />  {/*유효성 검사 다시*/} 
+          <Route path="/NewCreate" element={<NewCreate />} />  
           <Route path="/QnA" element={<QnA />} />
-
           <Route path="/SearchProduct" element={<SearchProduct />} />
           <Route path="/SearchProfile" element={<SearchProfile />} />
           <Route path="/SearchStyle" element={<SearchStyle />} />
           <Route path="/TotalSearchHead" element={<TotalSearchHead />} />
+          <Route path="/StyleDetail" element={<StyleDetail />} />
+          <Route path="/Stylemmain" element={<Stylemmain />} />
+          <Route path="/Styleprofile" element={<Styleprofile />} />
+          <Route path="/StyleprofileMyInterestProduct" element={<StyleprofileMyInterestProduct />} />
 
-          <Route path="/StyleDetail" element={<StyleDetail />} /> 
-          <Route path="/Stylemmain" element={<Stylemmain />} /> {/*Js X */}
-          <Route path="/Styleprofile" element={<Styleprofile />} /> 
+        
 
         </Routes>
       </div>

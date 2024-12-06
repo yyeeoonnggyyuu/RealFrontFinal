@@ -1,7 +1,7 @@
-export  const postsDatas = [
+export  const postsData = [
     { 
         id:'1',
-        img: "https://fakeimg.pl/262x262/",
+        img: "https://th.bing.com/th/id/OIP.xJkEtVQbleAWihNLs5EQtgHaIx?w=140&h=180&c=7&r=0&o=5&pid=1.7",
         userImg: "https://fakeimg.pl/26x26/",
         userId: "아이디1",
         likes: "♡4",
@@ -9,7 +9,7 @@ export  const postsDatas = [
     },
     { 
         id:'2',
-        img: "https://fakeimg.pl/262x262/",
+        img: "https://th.bing.com/th/id/OIP.Kc5yq9pZKilNI9rwM2pEBwHaJ4?w=163&h=217&c=7&r=0&o=5&pid=1.7",
         userImg: "https://fakeimg.pl/26x26/",
         userId: "아이디2",
         likes: "♡7",
