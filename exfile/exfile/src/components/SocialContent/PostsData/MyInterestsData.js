@@ -94,10 +94,5 @@ export const myInterestsData = [
         img: "https://th.bing.com/th/id/OIP.wZnPgvvTWdhEX3rxjno-xgHaEd?w=242&h=180&c=7&r=0&o=5&pid=1.7",
         userId: "아이디7",
         MyInterests: "7"
-    },
-    {
-        img: "https://th.bing.com/th/id/OIP.GxqQ3a4S5pp3x1TpyHWclQHaFH?w=252&h=180&c=7&r=0&o=5&pid=1.7",
-        userId: "아이디7",
-        MyInterests: "7"
     }
 ];
