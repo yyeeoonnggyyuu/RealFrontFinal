@@ -11,9 +11,10 @@ import SearchProfile from "./components/SearchPages/SearchProfile.js";
 import SearchStyle from "./components/SearchPages/SearchStyle.js";
 import TotalSearchHead from "./components/SearchPages/TotalSearchHead.js";
 import StyleDetail from "./components/SocialContent/StyleDetail.js";
-import Stylemmain from "./components/SocialContent/Stylemmain.js";
+import Stylemmain from "./components/SocialContent//StyleMain/Stylemmain.js";
 import Styleprofile from "./components/SocialContent/StyleProfile/Styleprofile.js";
 import StyleprofileMyInterestProduct from "./components/SocialContent/StyleProfile/StyleprofileMyInterestProduct.js";
+import Maso from "./Maso.js";
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/Stylemmain" element={<Stylemmain />} />
           <Route path="/Styleprofile" element={<Styleprofile />} />
           <Route path="/StyleprofileMyInterestProduct" element={<StyleprofileMyInterestProduct />} />
+          <Route path="/Maso" element={<Maso />} />
 
         
 
