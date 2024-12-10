@@ -6,7 +6,8 @@ const rootElement = document.getElementById("root"); // index.html 파일에서 
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <App />  {/* App 컴포넌트 렌더링 */}
-  </React.StrictMode>
+    // <React.StrictMode>
+    <App />  /*{ App 컴포넌트 렌더링 }*/
+  // </React.StrictMode>
+
 );

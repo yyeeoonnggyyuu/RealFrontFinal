@@ -221,30 +221,30 @@ img.search {
 }
 
 .a1{
-  transform: translateX(-350px); /* 필요에 따라 미세 조정 */
+  transform: translateX(-280px); /* 필요에 따라 미세 조정 */
 }
 
 .a2{
-  transform: translateX(-498px); /* 필요에 따라 미세 조정 */
+  transform: translateX(-430px); /* 필요에 따라 미세 조정 */
 }
 
 .a3{
-  transform: translateX(-347px); /* 필요에 따라 미세 조정 */
+  transform: translateX(-333px); /* 필요에 따라 미세 조정 */
 }
 
 .a4{
-  transform: translateX(-435px); /* 필요에 따라 미세 조정 */
+  transform: translateX(-400px); /* 필요에 따라 미세 조정 */
 }
 
 .a5{
-  transform: translateX(-538px); /* 필요에 따라 미세 조정 */
+  transform: translateX(-488px); /* 필요에 따라 미세 조정 */
 }
 
 
 .categorycircle img {
   transform: translateY(0px) !important;
-  width: 105px !important; 
-  height: 105px !important;
+  width: 95px !important; 
+  height: 95px !important;
   object-fit: scale-down;
 }
 
